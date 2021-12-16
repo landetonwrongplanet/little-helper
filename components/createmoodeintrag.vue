@@ -145,7 +145,7 @@ export default {
         id: 12,
         word: 'verzweifelt'
       }, {
-        id: 14,
+        id: 13,
         word: 'aufgedreht'
       }
       ],
