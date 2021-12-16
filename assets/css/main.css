@@ -13,10 +13,19 @@ h2 {
     width: 850px;
 }
 .emojis{
-    width: 70px;
+    display:block;
     height: 70px;
     line-height: 0.88;
-    transform: translateX(-5px);
+    border: 5px solid transparent;
+
+}
+.mood{
+    border: 5px solid transparent;
+    height: 100px;
+    width: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 .emoticons{
     margin: 10px;
@@ -46,6 +55,7 @@ button, input, optgroup, select, textarea {
 
 .chosenmoods{
     border: 5px solid violet;
+    border-radius: 50em;
     height: 100px;
     width: 100px;
 }

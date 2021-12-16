@@ -13,7 +13,7 @@
           </div>
           <div class="moods">
             <div v-for="(moods,key) in this.moods" :key="key" class="emoticons">
-              <div :class="{ chosenmoods:moods.id == chosenmood}">
+              <div :class="{ chosenmoods:moods.id == chosenmood, mood:true}">
                 <img class="emojis" :src="require('@/static/'+ moods.emoji)" @click="choose(moods.id)">
               </div>
             </div>
