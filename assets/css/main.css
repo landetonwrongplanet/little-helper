@@ -1,0 +1,80 @@
+h1 {
+    color: blueviolet;
+    font-family: 'Open Sans';
+    
+}
+h2 {
+    font-family: 'Open Sans';
+  
+}
+.wrapper{
+    margin-left:auto;
+    margin-right:auto;
+    width: 850px;
+}
+.emojis{
+    font-size: 100px;
+    line-height: 0.88;
+    transform: translateX(-5px);
+}
+.emoticons{
+    margin: 10px;
+}
+.scale{
+    float:left;
+    margin-right: 5px;
+    line-height: 1;
+}
+.barometer{
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin-bottom: 0px; 
+}
+.sitetitle{
+    font-size: 60px;
+    font-family: 'Open Sans';
+    margin: 10px;
+}
+.title{
+    margin: 10px;
+}
+
+.chosenmoods{
+    border: 5px solid violet;
+    border-radius : 50%;
+    height: 100px;
+    width: 100px;
+}
+.moods{
+    margin:15px;
+    display:flex;
+    width: 470px;
+    flex-wrap: wrap;
+}
+.chosenwords{
+    border: 5px solid brown;
+    width:90px;
+    margin: 5px;
+}
+.todolist {
+    float:left;
+}
+.words{
+    margin: 10px;
+}
+.content{
+
+}
+.ui .basic content center .aligned .segment{
+    margin: 0px;
+}
+.ui .centered .card{
+    width: 500px;
+}
+.ui form{
+    width: 500px;
+}

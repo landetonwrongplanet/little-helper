@@ -1,0 +1,187 @@
+<template>
+  <div class="ui basic content center aligned segment">
+    <button v-show="!isCreating" class="ui basic button icon" @click="openForm">
+      <i class="plus icon" />
+    </button>
+    <div v-show="isCreating" class="ui fluid card">
+      <div class="content">
+        <div class="ui form">
+          <div class="title">
+            <h2>
+              In Emoticons
+            </h2>
+          </div>
+          <div class="moods">
+            <div v-for="(moods,key) in this.moods" :key="key" class="emoticons" >
+              <div :class="{ chosenmoods:moods.id == chosenmood}" >
+                <p class="emojis" @click="choose(moods.id)" v-html="moods.emoji" />
+              </div>
+            </div>
+          </div>
+          <div claass="title">
+            <h2>
+              In Worten
+            </h2>
+          </div>
+          <div class="moods">
+            <div v-for="(words,key) in this.words" :key="key" class="words" >
+              <div :class=" { chosenwords:words.id == chosenword}" >
+                <p  @click="choosen(words.id)" v-html="words.word" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="title">
+              <h2>
+                Mittels Skala
+              </h2>
+            </div>
+            <div class="scale">
+              {{ scale }}
+            </div>
+            <div class="barometer">
+              <input
+                v-model="scale"
+                type="range"
+                min="0"
+                max="10"
+                step="1.0"
+              >
+            </div>
+          </div>
+          <div class="ui two button attached buttons">
+            <button class="ui basic blue button" @click="sendForm()">
+              Create
+            </button>
+            <button class="ui basic red button" @click="closeForm">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data () {
+    return {
+      titleText: '',
+      projectText: '',
+      isCreating: false,
+      scale: 5,
+      moods: [{
+        id: 1,
+        emoji: '&#128515;'
+      }, {
+        id: 2,
+        emoji: '&#128556;'
+      }, {
+        id: 3,
+        emoji: '&#128525;'
+      }, {
+        id: 4,
+        emoji: '&#128517;'
+      }, {
+        id: 5,
+        emoji: '&#128514;'
+      }, {
+        id: 6,
+        emoji: '&#128522;'
+      }, {
+        id: 7,
+        emoji: '&#128563;'
+      }, {
+        id: 8,
+        emoji: '&#128553;'
+      }, {
+        id: 9,
+        emoji: '&#128557;'
+      }, {
+        id: 10,
+        emoji: '&#128549;'
+      }, {
+        id: 11,
+        emoji: '&#128544;'
+      }, {
+        id: 12,
+        emoji: '&#128542;'
+      }],
+      chosenmood: null,
+      words: [{
+        id: 1,
+        word: 'enttäuscht'
+      }, {
+        id: 2,
+        word: 'traurig'
+      }, {
+        id: 3,
+        word: 'verletzt'
+      }, {
+        id: 4,
+        word: 'gestresst'
+      }, {
+        id: 5,
+        word: 'ängstlich'
+      }, {
+        id: 6,
+        word: 'wütend'
+      }, {
+        id: 7,
+        word: 'fröhlich'
+      }, {
+        id: 8,
+        word: 'neutral'
+      }, {
+        id: 9,
+        word: 'glücklich'
+      }, {
+        id: 10,
+        word: 'zufrieden'
+      }, {
+        id: 11,
+        word: 'erschöpft'
+      }, {
+        id: 12,
+        word: 'verzweifelt'
+      }, {
+        id: 13,
+        word: 'aufgedreht'
+      }
+      ],
+      chosenword: null
+    }
+  },
+  methods: {
+    choose (id) {
+      this.chosenmood = id
+      console.log(id)
+    },
+    choosen (id) {
+      this.chosenword = id
+      console.log(id)
+    },
+    openForm () {
+      this.isCreating = true
+    },
+    closeForm () {
+      this.isCreating = false
+    },
+    sendForm () {
+      console.log(this.titleText.length, this.projectText.length)
+      if (this.titleText.length > 0 && this.projectText.length > 0) {
+        const title = this.titleText
+        const project = this.projectText
+        this.$emit('create-todo', {
+          title,
+          project,
+          done: false,
+          date: Date.now()
+        })
+        this.newTodoText = ''
+      }
+      this.isCreating = false
+    }
+  }
+}
+</script>
