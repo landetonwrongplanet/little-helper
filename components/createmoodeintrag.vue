@@ -12,9 +12,9 @@
             </h2>
           </div>
           <div class="moods">
-            <div v-for="(moods,key) in this.moods" :key="key" class="emoticons" >
-              <div :class="{ chosenmoods:moods.id == chosenmood}" >
-                <p class="emojis" @click="choose(moods.id)" v-html="moods.emoji" />
+            <div v-for="(moods,key) in this.moods" :key="key" class="emoticons">
+              <div :class="{ chosenmoods:moods.id == chosenmood}">
+                <img class="emojis" :src="require('@/static/'+ moods.emoji)" @click="choose(moods.id)">
               </div>
             </div>
           </div>
@@ -24,9 +24,9 @@
             </h2>
           </div>
           <div class="moods">
-            <div v-for="(words,key) in this.words" :key="key" class="words" >
-              <div :class=" { chosenwords:words.id == chosenword}" >
-                <p  @click="choosen(words.id)" v-html="words.word" />
+            <div v-for="(words,key) in this.words" :key="key" class="words">
+              <div :class=" { chosenwords:words.id == chosenword}">
+                <p @click="choosen(words.id)" v-html="words.word" />
               </div>
             </div>
           </div>
@@ -72,40 +72,40 @@ export default {
       scale: 5,
       moods: [{
         id: 1,
-        emoji: '&#128515;'
+        emoji: 'Emoji01.png'
       }, {
         id: 2,
-        emoji: '&#128556;'
+        emoji: 'Emoji02.png'
       }, {
         id: 3,
-        emoji: '&#128525;'
+        emoji: 'Emoji03.png'
       }, {
         id: 4,
-        emoji: '&#128517;'
+        emoji: 'Emoji04.png'
       }, {
         id: 5,
-        emoji: '&#128514;'
+        emoji: 'Emoji05.png'
       }, {
         id: 6,
-        emoji: '&#128522;'
+        emoji: 'Emoji06.png'
       }, {
         id: 7,
-        emoji: '&#128563;'
+        emoji: 'Emoji07.png'
       }, {
         id: 8,
-        emoji: '&#128553;'
+        emoji: 'Emoji08.png'
       }, {
         id: 9,
-        emoji: '&#128557;'
+        emoji: 'Emoji09.png'
       }, {
         id: 10,
-        emoji: '&#128549;'
+        emoji: 'Emoji10.png'
       }, {
         id: 11,
-        emoji: '&#128544;'
+        emoji: 'Emoji11.png'
       }, {
         id: 12,
-        emoji: '&#128542;'
+        emoji: 'Emoji12.png'
       }],
       chosenmood: null,
       words: [{
