@@ -1,10 +1,11 @@
-h1 {
+title {
     color: blueviolet;
     font-family: 'Open Sans';
     
 }
 h2 {
     font-family: 'Open Sans';
+    color: blueviolet;
   
 }
 .wrapper{
