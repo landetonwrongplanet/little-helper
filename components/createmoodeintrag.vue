@@ -173,8 +173,9 @@ export default {
         const title = this.titleText
         const project = this.projectText
         this.$emit('create-todo', {
-          title,
-          project,
+          moods,
+          words,
+          scale,
           done: false,
           date: Date.now()
         })
