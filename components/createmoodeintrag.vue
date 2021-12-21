@@ -166,8 +166,8 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      console.log(this.words.length, this.scale.length, this.moods.length)
-      if (this.words.length > 0 && this.scale.length > 0 && this.moods.length > 0) {
+      console.log(this.words.length, this.scale, this.moods.length)
+      if (this.words.length > 0 && this.scale && this.moods.length > 0) {
         const moods = this.moods
         const words = this.words
         const scale = this.scale
