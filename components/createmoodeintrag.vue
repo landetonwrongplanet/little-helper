@@ -66,8 +66,6 @@
 export default {
   data () {
     return {
-      titleText: '',
-      projectText: '',
       isCreating: false,
       scale: 5,
       moods: [{
@@ -168,10 +166,11 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      console.log(this.titleText.length, this.projectText.length)
-      if (this.titleText.length > 0 && this.projectText.length > 0) {
-        const title = this.titleText
-        const project = this.projectText
+      console.log(this.words.length, this.scale.length, this.moods.length)
+      if (this.words.length > 0 && this.scale.length > 0 && this.moods.length > 0) {
+        const moods = this.moods
+        const words = this.words
+        const scale = this.scale
         this.$emit('create-todo', {
           moods,
           words,
@@ -179,7 +178,7 @@ export default {
           done: false,
           date: Date.now()
         })
-        this.newTodoText = ''
+        this.newMoodDiary = ''
       }
       this.isCreating = false
     }
