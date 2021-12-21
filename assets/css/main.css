@@ -3,11 +3,6 @@ title {
     font-family: 'Open Sans';
     
 }
-h2 {
-    font-family: 'Open Sans';
-    color: blueviolet;
-  
-}
 .wrapper{
     margin-left:auto;
     margin-right:auto;
@@ -50,12 +45,10 @@ button, input, optgroup, select, textarea {
     font-family: 'Open Sans';
     margin: 10px;
 }
-.title{
-    margin: 10px;
-}
+
 
 .chosenmoods{
-    border: 5px solid violet;
+    border: 5px solid rgb(168, 130, 238);
     border-radius: 50em;
     height: 100px;
     width: 100px;
@@ -77,9 +70,7 @@ button, input, optgroup, select, textarea {
 .words{
     margin: 10px;
 }
-.content{
 
-}
 .ui .basic content center .aligned .segment{
     margin: 0px;
 }
