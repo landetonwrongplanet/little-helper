@@ -56,7 +56,6 @@ button, input, optgroup, select, textarea {
 .moods{
     margin:15px;
     display:flex;
-    width: 470px;
     flex-wrap: wrap;
 }
 .chosenwords{
