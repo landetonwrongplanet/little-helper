@@ -166,16 +166,14 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      console.log(this.words.length, this.scale, this.moods.length)
       if (this.words.length > 0 && this.scale && this.moods.length > 0) {
-        const moods = this.moods
-        const words = this.words
+        const moods = this.chosenmood
+        const words = this.chosenword
         const scale = this.scale
-        this.$emit('create-todo', {
+        this.$emit('create-mood', {
           moods,
           words,
           scale,
-          done: false,
           date: Date.now()
         })
         this.newMoodDiary = ''

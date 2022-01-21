@@ -3,32 +3,35 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ todo.title }}
+          {{ mood.chosenmood }}
         </div>
         <div class="meta">
-          {{ todo.project }}
+          {{ mood.chosenword }}
+        </div>
+        <div class="meta">
+          {{ mood.scale }}
         </div>
         <div>
-          {{ todo.date | dateformat }}
+          {{ mood.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
             <i class="edit icon" @click="showForm" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteTodo(todo)" />
+            <i class="trash icon" @click="deleteMood(mood)" />
           </span>
         </div>
       </div>
       <div v-show="isEditing" class="content">
         <div class="ui Form">
           <div class="field">
-            <label>Title</label>
-            <input v-model="todo.title" type="text">
+            <label>Emoji</label>
+            <input v-model="mood.chosenmood" type="emoji">
           </div>
           <div class="field">
-            <label>Project</label>
-            <input v-model="todo.project" type="text">
+            <label>Word</label>
+            <input v-model="mood.chosenword" type="text">
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="hideForm">
@@ -37,10 +40,10 @@
           </div>
         </div>
       </div>
-      <div v-show="!isEditing &&todo.done" class="ui bottom attached green basic button" disabled @click="pendingTodo(todo)">
+      <div v-show="!isEditing &&todo.done" class="ui bottom attached green basic button" disabled @click="pendingMood(mood)">
         Completed
       </div>
-      <div v-show="!isEditing && !todo.done" class="ui bottom attached red basic button" @click="completeTodo(todo)">
+      <div v-show="!isEditing && !todo.done" class="ui bottom attached red basic button" @click="completeMood(mood)">
         Pending
       </div>
     </div>
@@ -69,21 +72,20 @@ export default {
   data () {
     return {
       isEditing: false,
-      titleText: '',
-      projectText: '',
+      moodSmiley: '',
+      moodWord: '',
       isCreating: false
     }
   },
   methods: {
     showForm () {
-      console.log(123)
       this.isEditing = true
     },
     hideForm () {
       this.isEditing = false
     },
-    deleteTodo (todo) {
-      this.$emit('delete-todo', todo)
+    deleteMood (mood) {
+      this.$emit('delete-mood', mood)
     },
     openForm () {
       this.isCreating = true
@@ -91,11 +93,11 @@ export default {
     closeForm () {
       this.isCreating = false
     },
-    completeTodo (todo) {
-      this.$emit('complete-todo', todo)
+    completeMood (mood) {
+      this.$emit('complete-mood', mood)
     },
-    pendingTodo (todo) {
-      this.$emit('pending-todo', todo)
+    pendingMood (mood) {
+      this.$emit('pending-mood', mood)
     }
   }
 }

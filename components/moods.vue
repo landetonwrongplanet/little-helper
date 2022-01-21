@@ -2,12 +2,9 @@
   <div>
     <div>
       <eintrag
-        v-for="(todo,key) in todos"
+        v-for="(mood,key) in moods"
         :key="key"
-        :todo="todo"
-        @delete-todo="deleteTodo"
-        @complete-todo="completeTodo"
-        @pending-todo="pendingTodo"
+        :mood="mood"
       />
     </div>
   </div>
@@ -21,7 +18,7 @@ export default {
     Eintrag
   },
   props: {
-    todos: {
+    moods: {
       type: Array,
       required: true,
       default: () => {
@@ -31,7 +28,7 @@ export default {
   },
   computed: {
     completedTasks () {
-      return this.todos.filter((todo) => { return todo.done === true }).length
+      return this.moods.filter((mood) => { return mood.done === true }).length
     }
   },
   methods: {

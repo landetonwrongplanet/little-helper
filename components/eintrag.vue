@@ -76,7 +76,6 @@ export default {
   },
   methods: {
     showForm () {
-      console.log(123)
       this.isEditing = true
     },
     hideForm () {
