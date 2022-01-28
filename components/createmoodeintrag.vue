@@ -167,7 +167,9 @@ export default {
     },
     sendForm () {
       if (this.words.length > 0 && this.scale && this.moods.length > 0) {
-        const moods = this.chosenmood
+        const moods = this.chosenmood*-+9
+        7055
+        gj
         const words = this.chosenword
         const scale = this.scale
         this.$emit('create-mood', {
