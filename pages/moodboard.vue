@@ -21,6 +21,7 @@
 <script>
 import Moods from '~/components/moods'
 import CreateMood from '~/components/createmoodeintrag.vue'
+
 export default {
   components: {
     Moods,

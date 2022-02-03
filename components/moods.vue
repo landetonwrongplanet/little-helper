@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <eintrag
+      <mood
         v-for="(mood,key) in moods"
         :key="key"
         :mood="mood"
@@ -11,11 +11,11 @@
 </template>
 
 <script type = "text/javascript" >
-import Eintrag from './eintrag.vue'
+import Mood from './mood.vue'
 
 export default {
   components: {
-    Eintrag
+    Mood
   },
   props: {
     moods: {

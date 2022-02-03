@@ -3,10 +3,10 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ mood.chosenmood }}
+          {{ mood.moods }}
         </div>
         <div class="meta">
-          {{ mood.chosenword }}
+          {{ mood.words }}
         </div>
         <div class="meta">
           {{ mood.scale }}
@@ -40,12 +40,6 @@
           </div>
         </div>
       </div>
-      <div v-show="!isEditing &&todo.done" class="ui bottom attached green basic button" disabled @click="pendingMood(mood)">
-        Completed
-      </div>
-      <div v-show="!isEditing && !todo.done" class="ui bottom attached red basic button" @click="completeMood(mood)">
-        Pending
-      </div>
     </div>
   </div>
 </template>
@@ -60,7 +54,7 @@ export default {
     }
   },
   props: {
-    todo: {
+    mood: {
       type: Object,
       required: true,
       default: () => {
@@ -92,12 +86,6 @@ export default {
     },
     closeForm () {
       this.isCreating = false
-    },
-    completeMood (mood) {
-      this.$emit('complete-mood', mood)
-    },
-    pendingMood (mood) {
-      this.$emit('pending-mood', mood)
     }
   }
 }
