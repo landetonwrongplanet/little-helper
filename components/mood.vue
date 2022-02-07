@@ -19,7 +19,7 @@
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm" />
+            <i class="edit icon" @click="showForm(mood)" />
           </span>
           <span class="right floated trash icon">
             <i class="trash icon" @click="deleteMood(mood)" />
@@ -37,7 +37,7 @@
             <input v-model="mood.chosenword" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm">
+            <button class="ui basic blue button" @click="hideForm(mood)">
               Close X
             </button>
           </div>
@@ -69,17 +69,26 @@ export default {
   },
   data () {
     return {
+      updatedMood: {
+        moods: '',
+        words: '',
+        scale: ''
+      }
     }
   },
   methods: {
-    showForm () {
+    showForm (mood) {
       this.isEditing = true
+      this.updatedMood.moods = mood.moods
+      this.updatedMood.words = mood.words
+      this.updatedMood.scale = mood.scale
     },
-    hideForm () {
+    hideForm (mood) {
       this.isEditing = false
+      this.$store.commit('mood/updateMood', { old: mood, new: this.updatedMood })
     },
-    deleteMood (mood) {
-      this.$emit('delete-mood', mood)
+    deleteMood (deletedMood) {
+      this.$emit('mood/deleteMood', deletedMood)
     },
     openForm () {
       this.isCreating = true

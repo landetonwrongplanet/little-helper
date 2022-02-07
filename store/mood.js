@@ -30,5 +30,15 @@ export const mutations = {
       date: addedMood.date
     })
     console.log(state.moods)
+  },
+  deleteMood (state, deletedMood) {
+    const moodIndex = state.moods.indexOf(deletedMood)
+    state.moods.splice(moodIndex, 1)
+  },
+  updateMood (state, updatedMood) {
+    const moodIndex = state.moods.indexOf(updatedMood.old)
+    state.moods[moodIndex].moods = updatedMood.new.moods
+    state.moods[moodIndex].words = updatedMood.new.words
+    state.moods[moodIndex].scale = updatedMood.new.scale
   }
 }

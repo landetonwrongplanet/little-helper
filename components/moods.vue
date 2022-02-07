@@ -28,6 +28,10 @@ export default {
   },
   computed: {
     methods: {
+      deleteMood (mood) {
+        const moodIndex = this.moods.moodIndex(mood)
+        this.moods.splice(moodIndex, 1)
+      }
     }
   }
 }
