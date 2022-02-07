@@ -3,12 +3,15 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ mood.moods }}
+          <div class="meta">
+            <div><p class="label">Ausgewählte Stimmung als Emoji:</p></div>
+            <img class="emojis" :src="require('@/static/'+ mood.moods)">
+          </div>
+        <div class="meta">
+        <div><p class="label">Ausgewählte Stimmung als Wort:</p></div>{{ mood.words }}
         </div>
         <div class="meta">
-          {{ mood.words }}
-        </div>
-        <div class="meta">
+          <div><p class="label">Ausgewählte Stimmung mittels Skala:</p></div>
           {{ mood.scale }}
         </div>
         <div>
@@ -42,6 +45,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 <script type = "text/javascript" >
 
@@ -65,10 +69,6 @@ export default {
   },
   data () {
     return {
-      isEditing: false,
-      moodSmiley: '',
-      moodWord: '',
-      isCreating: false
     }
   },
   methods: {

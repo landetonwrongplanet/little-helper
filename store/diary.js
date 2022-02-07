@@ -1,5 +1,5 @@
 export const state = () => ({
-  todos: [{
+  moods: [{
     title: 'Hausaufgaben vergessen',
     project: 'Heute habe ich meine Hausaufgaben vergessen! Welch eine Schande!',
     done: false,

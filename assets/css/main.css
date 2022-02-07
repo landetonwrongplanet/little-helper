@@ -79,3 +79,7 @@ button, input, optgroup, select, textarea {
 .ui form{
     width: 500px;
 }
+.label
+{
+    color: brown;
+}

@@ -25,8 +25,8 @@
           </div>
           <div class="moods">
             <div v-for="(words,key) in this.words" :key="key" class="words">
-              <div :class=" { chosenwords:words.id == chosenword}">
-                <p @click="choosen(words.id)" v-html="words.word" />
+              <div :class=" { chosenwords:words.word == chosenword}">
+                <p @click="choosen(words.word)" v-html="words.word" />
               </div>
             </div>
           </div>
