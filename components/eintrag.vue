@@ -81,8 +81,8 @@ export default {
     hideForm () {
       this.isEditing = false
     },
-    deleteTodo (todo) {
-      this.$emit('delete-todo', todo)
+    deleteTodo (deletedTodo) {
+      this.$store.commit('diary/deleteTodo', deletedTodo)
     },
     openForm () {
       this.isCreating = true

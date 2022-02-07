@@ -1,3 +1,4 @@
+
 export const state = () => ({
   todos: [{
     title: 'Hausaufgaben vergessen',
@@ -29,5 +30,10 @@ export const mutations = {
       done: false,
       date: addedTodo.date
     })
+  },
+  deleteTodo (state, deletedTodo) {
+    const todoIndex = state.todos.indexOf(deletedTodo)
+    state.todos.splice(todoIndex, 1)
   }
+
 }
