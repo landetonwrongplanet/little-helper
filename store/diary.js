@@ -34,6 +34,11 @@ export const mutations = {
   deleteTodo (state, deletedTodo) {
     const todoIndex = state.todos.indexOf(deletedTodo)
     state.todos.splice(todoIndex, 1)
+  },
+  updateTodo (state, updatedTodo) {
+    const todoIndex = state.todos.indexOf(updatedTodo.old)
+    state.todos[todoIndex].title = updatedTodo.new.title
+    state.todos[todoIndex].project = updatedTodo.new.project
   }
 
 }

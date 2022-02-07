@@ -13,7 +13,7 @@
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm" />
+            <i class="edit icon" @click="showForm(todo)" />
           </span>
           <span class="right floated trash icon">
             <i class="trash icon" @click="deleteTodo(todo)" />
@@ -24,24 +24,18 @@
         <div class="ui Form">
           <div class="field">
             <label>Title</label>
-            <input v-model="todo.title" type="text">
+            <input v-model="updatedTodo.title" type="text">
           </div>
           <div class="field">
             <label>Project</label>
-            <input v-model="todo.project" type="text">
+            <input v-model="updatedTodo.project" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm">
+            <button class="ui basic blue button" @click="hideForm(todo)">
               Close X
             </button>
           </div>
         </div>
-      </div>
-      <div v-show="!isEditing &&todo.done" class="ui bottom attached green basic button" disabled @click="pendingTodo(todo)">
-        Completed
-      </div>
-      <div v-show="!isEditing && !todo.done" class="ui bottom attached red basic button" @click="completeTodo(todo)">
-        Pending
       </div>
     </div>
   </div>
@@ -71,15 +65,22 @@ export default {
       isEditing: false,
       titleText: '',
       projectText: '',
-      isCreating: false
+      isCreating: false,
+      updatedTodo: {
+        title: '',
+        project: ''
+      }
     }
   },
   methods: {
-    showForm () {
+    showForm (todo) {
       this.isEditing = true
+      this.updatedTodo.title = todo.title
+      this.updatedTodo.project = todo.project
     },
-    hideForm () {
+    hideForm (todo) {
       this.isEditing = false
+      this.$store.commit('diary/updateTodo', { old: todo, new: this.updatedTodo })
     },
     deleteTodo (deletedTodo) {
       this.$store.commit('diary/deleteTodo', deletedTodo)
@@ -89,12 +90,6 @@ export default {
     },
     closeForm () {
       this.isCreating = false
-    },
-    completeTodo (todo) {
-      this.$emit('complete-todo', todo)
-    },
-    pendingTodo (todo) {
-      this.$emit('pending-todo', todo)
     }
   }
 }
