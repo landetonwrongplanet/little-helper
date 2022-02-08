@@ -19,8 +19,8 @@
   </div>
 </template>
 <script>
-import Moods from '~/components/moods'
-import CreateMood from '~/components/createmoodeintrag.vue'
+import Moods from '~/components/listmoods'
+import CreateMood from '~/components/createmood.vue'
 
 export default {
   components: {

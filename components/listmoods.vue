@@ -11,7 +11,7 @@
 </template>
 
 <script type = "text/javascript" >
-import Mood from './mood.vue'
+import Mood from './editingmoods.vue'
 
 export default {
   components: {

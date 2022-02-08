@@ -12,7 +12,7 @@
 </template>
 
 <script type = "text/javascript" >
-import Entry from './eintrag.vue'
+import Entry from './editingentry.vue'
 
 export default {
   components: {

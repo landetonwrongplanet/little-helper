@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import diaryEntry from '~/components/eintraege'
-import createEntry from '~/components/createeintrag.vue'
+import diaryEntry from '~/components/listentries'
+import createEntry from '~/components/createentry.vue'
 export default {
   name: 'App',
   components: {
