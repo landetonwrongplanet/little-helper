@@ -26,15 +26,42 @@
           </span>
         </div>
       </div>
+      </div>
       <div v-show="isEditing" class="content">
         <div class="ui Form">
           <div class="field">
             <label>Emoji</label>
-            <input v-model="mood.chosenmood" type="emoji">
+            <input v-model="updatedMood.moods" type="emoji">
+             <div class="moods">
+              <div v-for="(moods,key) in this.moods" :key="key" class="emoticons">
+                <div :class="{ chosenmoods:moods.emoji == updatedMood.moods, mood:true}">
+                  <img class="emojis" :src="require('@/static/'+ moods.emoji)" @click="choose(moods.emoji)">
+                </div>
+             </div>
+          </div>
           </div>
           <div class="field">
             <label>Word</label>
-            <input v-model="mood.chosenword" type="text">
+            <input v-model="updatedMood.words" type="text">
+            <div class="moods">
+              <div v-for="(words,key) in this.words" :key="key" class="words">
+                <div :class=" { chosenwords:words.word == updatedMood.words}">
+                  <p @click="choosen(words.word)" v-html="words.word" />
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="field">
+            <label>Scale</label>
+            <div class="barometer">
+              <input
+                v-model="updatedMood.scale"
+                type="range"
+                min="0"
+                max="10"
+                step="1.0"
+              >
+            </div>
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="hideForm(mood)">
@@ -42,7 +69,6 @@
             </button>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -69,26 +95,47 @@ export default {
   },
   data () {
     return {
+      isEditing: false,
       updatedMood: {
         moods: '',
         words: '',
         scale: ''
-      }
+      },
+      scale: 5,
+      chosenmood: null,
+      chosenword: null
+    }
+  },
+  computed: {
+    moods () {
+      return this.$store.state.mood.emojis
+    },
+    words () {
+      return this.$store.state.mood.words
     }
   },
   methods: {
     showForm (mood) {
+      console.log(mood)
       this.isEditing = true
       this.updatedMood.moods = mood.moods
       this.updatedMood.words = mood.words
       this.updatedMood.scale = mood.scale
+    },
+    choose (id) {
+      this.updatedMood.moods = id
+      console.log(id)
+    },
+    choosen (id) {
+      this.updatedMood.words = id
+      console.log(id)
     },
     hideForm (mood) {
       this.isEditing = false
       this.$store.commit('mood/updateMood', { old: mood, new: this.updatedMood })
     },
     deleteMood (deletedMood) {
-      this.$emit('mood/deleteMood', deletedMood)
+      this.$store.commit('mood/deleteMood', deletedMood)
     },
     openForm () {
       this.isCreating = true
