@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <eintrag
+      <Entry
         v-for="(entry,key) in entries"
         :key="key"
         :entry="entry"
@@ -12,11 +12,11 @@
 </template>
 
 <script type = "text/javascript" >
-import Eintrag from './eintrag.vue'
+import Entry from './eintrag.vue'
 
 export default {
   components: {
-    Eintrag
+    Entry
   },
   props: {
     entries: {
