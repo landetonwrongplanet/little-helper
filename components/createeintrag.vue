@@ -12,7 +12,7 @@
           </div>
           <div class="field">
             <label>Eintrag</label>
-            <input ref="project" v-model="projectText" type="text" defaultValue="">
+            <input ref="project" v-model="entryText" type="text" defaultValue="">
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="sendForm()">
@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       titleText: '',
-      projectText: '',
+      entryText: '',
       isCreating: false
     }
   },
@@ -45,16 +45,15 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      console.log(this.titleText.length, this.projectText.length)
-      if (this.titleText.length > 0 && this.projectText.length > 0) {
+      if (this.titleText.length > 0 && this.entryText.length > 0) {
         const title = this.titleText
-        const project = this.projectText
-        this.$emit('create-todo', {
+        const entry = this.entryText
+        this.$emit('create-entry', {
           title,
-          project,
+          entry,
           date: Date.now()
         })
-        this.newTodoText = ''
+        this.entryText = ''
       }
       this.isCreating = false
     }

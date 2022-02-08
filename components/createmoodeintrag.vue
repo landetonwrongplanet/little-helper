@@ -14,7 +14,7 @@
           <div class="moods">
             <div v-for="(moods,key) in this.moods" :key="key" class="emoticons">
               <div :class="{ chosenmoods:moods.emoji == chosenmood, mood:true}">
-                <img class="emojis" :src="require('@/static/'+ moods.emoji)" @click="choose(moods.emoji)">
+                <img class="emojis" :src="require('@/static/'+ moods.emoji)" @click="choosenemoji(moods.emoji)">
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@
           <div class="moods">
             <div v-for="(words,key) in this.words" :key="key" class="words">
               <div :class=" { chosenwords:words.word == chosenword}">
-                <p @click="choosen(words.word)" v-html="words.word" />
+                <p @click="choosenword(words.word)" v-html="words.word" />
               </div>
             </div>
           </div>
@@ -81,11 +81,11 @@ export default {
     }
   },
   methods: {
-    choose (id) {
+    choosenemoji (id) {
       this.chosenmood = id
       console.log(id)
     },
-    choosen (id) {
+    choosenword (id) {
       this.chosenword = id
       console.log(id)
     },

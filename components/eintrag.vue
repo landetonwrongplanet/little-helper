@@ -3,20 +3,20 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ todo.title }}
+          {{ entry.title }}
         </div>
         <div class="meta">
-          {{ todo.project }}
+          {{ entry.entry }}
         </div>
         <div>
-          {{ todo.date | dateformat }}
+          {{ entry.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(todo)" />
+            <i class="edit icon" @click="showForm(entry)" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteTodo(todo)" />
+            <i class="trash icon" @click="deleteEntry(entry)" />
           </span>
         </div>
       </div>
@@ -24,14 +24,14 @@
         <div class="ui Form">
           <div class="field">
             <label>Title</label>
-            <input v-model="updatedTodo.title" type="text">
+            <input v-model="updatedEntry.title" type="text">
           </div>
           <div class="field">
-            <label>Project</label>
-            <input v-model="updatedTodo.project" type="text">
+            <label>Entry</label>
+            <input v-model="updatedEntry.entry" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(todo)">
+            <button class="ui basic blue button" @click="hideForm(entry)">
               Close X
             </button>
           </div>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props: {
-    todo: {
+    entry: {
       type: Object,
       required: true,
       default: () => {
@@ -64,26 +64,26 @@ export default {
     return {
       isEditing: false,
       titleText: '',
-      projectText: '',
+      entryText: '',
       isCreating: false,
-      updatedTodo: {
+      updatedEntry: {
         title: '',
-        project: ''
+        entry: ''
       }
     }
   },
   methods: {
-    showForm (todo) {
+    showForm (entry) {
       this.isEditing = true
-      this.updatedTodo.title = todo.title
-      this.updatedTodo.project = todo.project
+      this.updatedEntry.title = entry.title
+      this.updatedEntry.entry = entry.entry
     },
-    hideForm (todo) {
+    hideForm (entry) {
       this.isEditing = false
-      this.$store.commit('diary/updateTodo', { old: todo, new: this.updatedTodo })
+      this.$store.commit('diary/updateEntry', { old: entry, new: this.updatedEntry })
     },
-    deleteTodo (deletedTodo) {
-      this.$store.commit('diary/deleteTodo', deletedTodo)
+    deleteEntry (deletedEntry) {
+      this.$store.commit('diary/deleteEntry', deletedEntry)
     },
     openForm () {
       this.isCreating = true

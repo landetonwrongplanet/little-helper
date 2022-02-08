@@ -2,10 +2,10 @@
   <div>
     <div>
       <eintrag
-        v-for="(todo,key) in todos"
+        v-for="(entry,key) in entries"
         :key="key"
-        :todo="todo"
-        @delete-todo="deleteTodo"
+        :entry="entry"
+        @delete-entry="deleteEntry"
       />
     </div>
   </div>
@@ -19,7 +19,7 @@ export default {
     Eintrag
   },
   props: {
-    todos: {
+    entries: {
       type: Array,
       required: true,
       default: () => {
@@ -28,9 +28,9 @@ export default {
     }
   },
   methods: {
-    deleteTodo (todo) {
-      const todoIndex = this.todos.indexOf(todo)
-      this.todos.splice(todoIndex, 1)
+    deleteEntry (entry) {
+      const entryIndex = this.entries.indexOf(entry)
+      this.entries.splice(entryIndex, 1)
     }
   }
 }

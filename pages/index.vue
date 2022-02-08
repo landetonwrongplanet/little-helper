@@ -11,33 +11,33 @@
       </div>
     </div>
     <div>
-      <TodoList :todos="todos" />
-      <CreateTodo @create-todo="addTodo" />
+      <diaryEntry :entries="entries" />
+      <createEntry @create-entry="addEntry" />
     </div>
   </div>
 </template>
 
 <script>
-import TodoList from '~/components/eintraege'
-import CreateTodo from '~/components/createeintrag.vue'
+import diaryEntry from '~/components/eintraege'
+import createEntry from '~/components/createeintrag.vue'
 export default {
   name: 'App',
   components: {
-    TodoList,
-    CreateTodo
+    diaryEntry,
+    createEntry
   },
   data () {
     return {
     }
   },
   computed: {
-    todos () {
-      return this.$store.state.diary.todos
+    entries () {
+      return this.$store.state.diary.entries
     }
   },
   methods: {
-    addTodo (addedTodo) {
-      this.$store.commit('diary/addTodo', addedTodo)
+    addEntry (addedEntry) {
+      this.$store.commit('diary/addEntry', addedEntry)
     }
   }
 }
