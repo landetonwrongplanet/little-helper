@@ -6,8 +6,11 @@
       </h1>
     </div>
     <div class="title">
-      <NuxtLink to="/">
+      <NuxtLink to="/diaryboard">
         Diary
+      </NuxtLink><br>
+        <NuxtLink to="/notes">
+        Notes
       </NuxtLink>
     </div>
     <div>

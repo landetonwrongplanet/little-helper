@@ -2,44 +2,46 @@
   <div>
     <div class="wrapper">
       <div class="title">
-        <h1>Dies ist dein persönliches Tagebuch📝</h1>
+        <h1>Dies ist dein persönlicher Notizbereich</h1>
       </div>
       <div class="title">
         <NuxtLink to="/moodboard">
           Mood validation
+        </NuxtLink><br>
+        <NuxtLink to="/diaryboard">
+        Diary
         </NuxtLink>
       </div>
     </div>
     <div>
-      <diaryEntry :entries="entries" />
-      <createEntry @create-entry="addEntry" />
+      <newNote :notes="notes" />
+      <createNote @create-note="addNote" />
     </div>
   </div>
 </template>
 
 <script>
-import diaryEntry from '~/components/listentries'
-import createEntry from '~/components/createentry.vue'
+import newNote from '~/components/listnotes.vue'
+import createNote from '~/components/createnote.vue'
 export default {
   name: 'App',
   components: {
-    diaryEntry,
-    createEntry
+    newNote,
+    createNote
   },
   data () {
     return {
     }
   },
   computed: {
-    entries () {
-      return this.$store.state.diary.entries
+    newNote () {
+      return this.$store.state.notes.notes
     }
   },
   methods: {
-    addEntry (addedEntry) {
-      this.$store.commit('diary/addEntry', addedEntry)
+    addNote (addedNote) {
+      this.$store.commit('notes/addNote', addedNote)
     }
   }
 }
-
 </script>

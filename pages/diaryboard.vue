@@ -7,6 +7,9 @@
       <div class="title">
         <NuxtLink to="/moodboard">
           Mood validation
+        </NuxtLink><br>
+         <NuxtLink to="/notes">
+          Notes
         </NuxtLink>
       </div>
     </div>

@@ -1,25 +1,25 @@
 <template>
   <div>
     <div>
-      <Entry
-        v-for="(entry,key) in entries"
+      <Note
+        v-for="(note,key) in notes"
         :key="key"
-        :entry="entry"
-        @delete-entry="deleteEntry"
+        :note="note"
+        @delete-note="deleteNote"
       />
     </div>
   </div>
 </template>
 
 <script type = "text/javascript" >
-import Entry from './editingentry.vue'
+import Note from './editingnotes.vue'
 
 export default {
   components: {
-    Entry
+    Note
   },
   props: {
-    entries: {
+    notes: {
       type: Array,
       required: true,
       default: () => {
@@ -28,9 +28,9 @@ export default {
     }
   },
   methods: {
-    deleteEntry (entry) {
-      const entryIndex = this.entries.indexOf(entry)
-      this.entries.splice(entryIndex, 1)
+    deleteNote (note) {
+      const noteIndex = this.notes.indexOf(note)
+      this.notes.splice(noteIndex, 1)
     }
   }
 }

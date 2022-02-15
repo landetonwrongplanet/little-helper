@@ -3,20 +3,20 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ entry.title }}
+          {{ note.title }}
         </div>
         <div class="meta">
-          {{ entry.entry }}
+          {{ note.entry }}
         </div>
         <div>
-          {{ entry.date | dateformat }}
+          {{ note.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(entry)" />
+            <i class="edit icon" @click="showForm(note)" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteEntry(entry)" />
+            <i class="trash icon" @click="deleteEntry(note)" />
           </span>
         </div>
       </div>
@@ -24,14 +24,14 @@
         <div class="ui Form">
           <div class="field">
             <label>Title</label>
-            <input v-model="updatedEntry.title" type="text">
+            <input v-model="updatedNote.title" type="text">
           </div>
           <div class="field">
             <label>Entry</label>
-            <input v-model="updatedEntry.entry" type="text">
+            <input v-model="updatedNote.entry" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(entry)">
+            <button class="ui basic blue button" @click="hideForm(note)">
               Close X
             </button>
           </div>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props: {
-    entry: {
+    note: {
       type: Object,
       required: true,
       default: () => {
@@ -66,24 +66,24 @@ export default {
       titleText: '',
       entryText: '',
       isCreating: false,
-      updatedEntry: {
+      updatedNote: {
         title: '',
         entry: ''
       }
     }
   },
   methods: {
-    showForm (entry) {
+    showForm (note) {
       this.isEditing = true
-      this.updatedEntry.title = entry.title
-      this.updatedEntry.entry = entry.entry
+      this.updatedNote.title = note.title
+      this.updatedNote.entry = note.entry
     },
-    hideForm (entry) {
+    hideForm (note) {
       this.isEditing = false
-      this.$store.commit('diary/updateEntry', { old: entry, new: this.updatedEntry })
+      this.$store.commit('notes/updateNote', { old: note, new: this.updatedNote })
     },
-    deleteEntry (deletedEntry) {
-      this.$store.commit('diary/deleteEntry', deletedEntry)
+    deleteNote (deletedNote) {
+      this.$store.commit('notes/deleteNote', deletedNote)
     },
     openForm () {
       this.isCreating = true

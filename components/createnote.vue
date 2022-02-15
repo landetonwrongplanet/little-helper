@@ -48,7 +48,7 @@ export default {
       if (this.titleText.length > 0 && this.entryText.length > 0) {
         const title = this.titleText
         const entry = this.entryText
-        this.$emit('create-entry', {
+        this.$emit('create-note', {
           title,
           entry,
           date: Date.now()
