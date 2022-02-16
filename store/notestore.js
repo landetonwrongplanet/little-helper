@@ -34,7 +34,7 @@ export const mutations = {
     const noteIndex = state.notes.indexOf(deletedNote)
     state.notes.splice(noteIndex, 1)
   },
-  updateEntry (state, updatedNote) {
+  updateNote (state, updatedNote) {
     const noteIndex = state.notes.indexOf(updatedNote.old)
     state.notes[noteIndex].headline = updatedNote.new.headline
     state.notes[noteIndex].memo = updatedNote.new.memo

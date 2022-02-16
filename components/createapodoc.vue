@@ -8,11 +8,11 @@
         <div class="ui form">
           <div class="field">
             <label>Headline</label>
-            <input ref="title" v-model="headlineText" type="text" defaultValue="">
+            <input ref="title" v-model="kardexTitle" type="text" defaultValue="">
           </div>
           <div class="field">
             <label>Memo</label>
-            <input ref="project" v-model="memoText" type="text" defaultValue="">
+            <input ref="project" v-model="kardexText" type="text" defaultValue="">
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="sendForm()">
@@ -32,8 +32,8 @@
 export default {
   data () {
     return {
-      headlineText: '',
-      memoText: '',
+      kardexTitle: '',
+      kardexText: '',
       isCreating: false
     }
   },
@@ -45,15 +45,15 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      if (this.headlineText.length > 0 && this.memoText.length > 0) {
-        const headline = this.headlineText
-        const memo = this.memoText
-        this.$emit('create-note', {
-          headline,
-          memo,
+      if (this.kardexTitle.length > 0 && this.kardexText.length > 0) {
+        const kardextitle = this.kardexTitle
+        const kardextext = this.kardexText
+        this.$emit('create-medicalmemo', {
+          kardextitle,
+          kardextext,
           date: Date.now()
         })
-        this.memoText = ''
+        this.kardexText = ''
       }
       this.isCreating = false
     }

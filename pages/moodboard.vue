@@ -9,6 +9,9 @@
       <NuxtLink to="/diaryboard">
         Diary
       </NuxtLink><br>
+      <NuxtLink to="/apocare">
+          Medical Intervention
+        </NuxtLink><br>
         <NuxtLink to="/notes">
         Notes
       </NuxtLink>

@@ -3,20 +3,20 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ note.headline }}
+          {{ medicalMemo.kardextitle }}
         </div>
         <div class="meta">
-          {{ note.memo }}
+          {{ medicalMemo.kardextext }}
         </div>
         <div>
-          {{ note.date | dateformat }}
+          {{ medicalMemo.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(note)" />
+            <i class="edit icon" @click="showForm(medicalMemo)" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteNote(note)" />
+            <i class="trash icon" @click="deleteMedicalMemo(medicalMemo)" />
           </span>
         </div>
       </div>
@@ -24,14 +24,14 @@
         <div class="ui Form">
           <div class="field">
             <label>Headline</label>
-            <input v-model="updatedNote.headline" type="text">
+            <input v-model="updatedMedicalMemo.kardextitle" type="text">
           </div>
           <div class="field">
             <label>Memo</label>
-            <input v-model="updatedNote.memo" type="text">
+            <input v-model="updatedMedicalMemo.kardextext" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(note)">
+            <button class="ui basic blue button" @click="hideForm(medicalMemo)">
               Close X
             </button>
           </div>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props: {
-    note: {
+    medicalMemo: {
       type: Object,
       required: true,
       default: () => {
@@ -63,27 +63,27 @@ export default {
   data () {
     return {
       isEditing: false,
-      headlineText: '',
-      memoText: '',
+      kardexTitle: '',
+      kardexText: '',
       isCreating: false,
-      updatedNote: {
-        headline: '',
-        memo: ''
+      updatedMedicalMemo: {
+        kardextitle: '',
+        kardextext: ''
       }
     }
   },
   methods: {
-    showForm (note) {
+    showForm (medicalMemo) {
       this.isEditing = true
-      this.updatedNote.headline = note.headline
-      this.updatedNote.memo = note.memo
+      this.updatedMedicalMemo.kardextitle = medicalMemo.kardextitle
+      this.updatedMedicalMemo.kardextext = medicalMemo.kardextext
     },
-    hideForm (note) {
+    hideForm (medicalMemo) {
       this.isEditing = false
-      this.$store.commit('notestore/updateNote', { old: note, new: this.updatedNote })
+      this.$store.commit('apocare/updateMedicalMemo', { old: medicalMemo, new: this.updatedMedicalMemo })
     },
-    deleteNote (deletedNote) {
-      this.$store.commit('notestore/deleteNote', deletedNote)
+    deleteMedicalMemo (deletedMedicalMemo) {
+      this.$store.commit('apocare/deleteMedicalMemo', deletedMedicalMemo)
     },
     openForm () {
       this.isCreating = true
