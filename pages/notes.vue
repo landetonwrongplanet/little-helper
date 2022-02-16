@@ -12,7 +12,10 @@
           Medical Intervention
         </NuxtLink><br>
         <NuxtLink to="/diaryboard">
-        Diary
+          Diary
+        </NuxtLink><br>
+        <NuxtLink to="/socially">
+          Social competences
         </NuxtLink>
       </div>
     </div>

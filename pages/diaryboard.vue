@@ -13,6 +13,9 @@
         </NuxtLink><br>
          <NuxtLink to="/notes">
           Notes
+        </NuxtLink><br>
+        <NuxtLink to="/socially">
+          Social competences
         </NuxtLink>
       </div>
     </div>

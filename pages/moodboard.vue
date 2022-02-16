@@ -10,10 +10,13 @@
         Diary
       </NuxtLink><br>
       <NuxtLink to="/apocare">
-          Medical Intervention
-        </NuxtLink><br>
-        <NuxtLink to="/notes">
+        Medical Intervention
+      </NuxtLink><br>
+      <NuxtLink to="/notes">
         Notes
+      </NuxtLink><br>
+      <NuxtLink to="/socially">
+        Social competences
       </NuxtLink>
     </div>
     <div>

@@ -9,10 +9,13 @@
           Mood validation
         </NuxtLink><br>
         <NuxtLink to="/diaryboard">
-        Diary
-        </NuxtLink>
+          Diary
+        </NuxtLink><br>
          <NuxtLink to="/notes">
           Notes
+        </NuxtLink><br>
+        <NuxtLink to="/socially">
+          Social competences
         </NuxtLink>
       </div>
     </div>
@@ -43,7 +46,7 @@ export default {
   },
   methods: {
     addMedicalMemo (addedMedicalMemo) {
-      this.$store.commit('apocare/addMedicalMemo', addedMedicalMemo)
+      this.$store.commit('apodoc/addMedicalMemo', addedMedicalMemo)
     }
   }
 }

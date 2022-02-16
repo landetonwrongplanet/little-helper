@@ -80,10 +80,10 @@ export default {
     },
     hideForm (medicalMemo) {
       this.isEditing = false
-      this.$store.commit('apocare/updateMedicalMemo', { old: medicalMemo, new: this.updatedMedicalMemo })
+      this.$store.commit('apodoc/updateMedicalMemo', { old: medicalMemo, new: this.updatedMedicalMemo })
     },
     deleteMedicalMemo (deletedMedicalMemo) {
-      this.$store.commit('apocare/deleteMedicalMemo', deletedMedicalMemo)
+      this.$store.commit('apodoc/deleteMedicalMemo', deletedMedicalMemo)
     },
     openForm () {
       this.isCreating = true

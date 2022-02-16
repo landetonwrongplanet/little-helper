@@ -2,7 +2,7 @@
   <div>
     <div>
       <mobiledoc
-        v-for="(medicalMemo,key) in mobiledoc"
+        v-for="(medicalMemo,key) in medicalMemo"
         :key="key"
         :medicalMemo="medicalMemo"
         @delete-medicalmemo="deleteMedicalMemo"
@@ -19,7 +19,7 @@ export default {
     Mobiledoc
   },
   props: {
-    mobiledoc: {
+    medicalMemo: {
       type: Array,
       required: true,
       default: () => {
