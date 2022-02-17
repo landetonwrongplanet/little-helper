@@ -4,7 +4,7 @@
       <mobiledoc
         v-for="(medicalMemo,key) in medicalMemo"
         :key="key"
-        :medicalMemo="medicalMemo"
+        :medical-memo="medicalMemo"
         @delete-medicalmemo="deleteMedicalMemo"
       />
     </div>

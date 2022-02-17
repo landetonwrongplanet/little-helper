@@ -3,20 +3,20 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ medicalMemo.kardextitle }}
+          {{ socialTopic.topictitle }}
         </div>
         <div class="meta">
-          {{ medicalMemo.kardextext }}
+          {{ socialTopic.topictext }}
         </div>
         <div>
-          {{ medicalMemo.date | dateformat }}
+          {{ socialTopic.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(medicalMemo)" />
+            <i class="edit icon" @click="showForm(socialTopic)" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteMedicalMemo(medicalMemo)" />
+            <i class="trash icon" @click="deleteSocialTopic(socialTopic)" />
           </span>
         </div>
       </div>
@@ -24,14 +24,14 @@
         <div class="ui Form">
           <div class="field">
             <label>Headline</label>
-            <input v-model="updatedMedicalMemo.kardextitle" type="text">
+            <input v-model="updatedSocialTopic.topictitle" type="text">
           </div>
           <div class="field">
             <label>Memo</label>
-            <input v-model="updatedMedicalMemo.kardextext" type="text">
+            <input v-model="updatedSocialTopic.topictext" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(medicalMemo)">
+            <button class="ui basic blue button" @click="hideForm(socialTopic)">
               Close X
             </button>
           </div>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props: {
-    medicalMemo: {
+    socialTopic: {
       type: Object,
       required: true,
       default: () => {
@@ -63,27 +63,27 @@ export default {
   data () {
     return {
       isEditing: false,
-      kardexTitle: '',
-      kardexText: '',
+      topicTitle: '',
+      topicText: '',
       isCreating: false,
-      updatedMedicalMemo: {
-        kardextitle: '',
-        kardextext: ''
+      updatedSocialTopic: {
+        topictitle: '',
+        topictext: ''
       }
     }
   },
   methods: {
-    showForm (medicalMemo) {
+    showForm (socialTopic) {
       this.isEditing = true
-      this.updatedMedicalMemo.kardextitle = medicalMemo.kardextitle
-      this.updatedMedicalMemo.kardextext = medicalMemo.kardextext
+      this.updatedSocialTopic.topictitle = socialTopic.topictitle
+      this.updatedSocialTopic.topictext = socialTopic.topictext
     },
-    hideForm (medicalMemo) {
+    hideForm (socialTopic) {
       this.isEditing = false
-      this.$store.commit('apodoc/updateMedicalMemo', { old: medicalMemo, new: this.updatedMedicalMemo })
+      this.$store.commit('socialcompetences/updateSocialTopic', { old: socialTopic, new: this.updatedSocialTopic })
     },
-    deleteMedicalMemo (deletedMedicalMemo) {
-      this.$store.commit('apodoc/deleteMedicalMemo', deletedMedicalMemo)
+    deleteSocialTopic (deletedSocialTopic) {
+      this.$store.commit('socialcompetences/deleteSocialTopic', deletedSocialTopic)
     },
     openForm () {
       this.isCreating = true

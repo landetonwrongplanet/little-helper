@@ -11,7 +11,7 @@
         <NuxtLink to="/diaryboard">
           Diary
         </NuxtLink><br>
-         <NuxtLink to="/notes">
+        <NuxtLink to="/notes">
           Notes
         </NuxtLink><br>
         <NuxtLink to="/socially">
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div>
-      <storeDoc :medicalMemo="medicalMemo" />
+      <storeDoc :medical-memo="medicalMemo" />
       <createMedicalMemo @create-medicalmemo="addMedicalMemo" />
     </div>
   </div>

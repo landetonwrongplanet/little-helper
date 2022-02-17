@@ -11,39 +11,39 @@
         <NuxtLink to="/diaryboard">
           Diary
         </NuxtLink><br>
-         <NuxtLink to="/notes">
+        <NuxtLink to="/notes">
           Notes
         </NuxtLink><br>
       </div>
     </div>
     <div>
-      <storeDoc :medicalMemo="medicalMemo" />
-      <createMedicalMemo @create-medicalmemo="addMedicalMemo" />
+      <socialCompetences :social-topic="socialTopic" />
+      <createSocialTopic @create-socialtopic="addSocialTopic" />
     </div>
   </div>
 </template>
 
 <script>
-import storeDoc from '~/components/listapodoc.vue'
-import createMedicalMemo from '~/components/createapodoc.vue'
+import socialCompetences from '~/components/listsocials.vue'
+import createSocialTopic from '~/components/createsocials.vue'
 export default {
   name: 'App',
   components: {
-    storeDoc,
-    createMedicalMemo
+    socialCompetences,
+    createSocialTopic
   },
   data () {
     return {
     }
   },
   computed: {
-    medicalMemo () {
-      return this.$store.state.apodoc.mobiledoc
+    socialTopic () {
+      return this.$store.state.socialcompetences.socials
     }
   },
   methods: {
-    addMedicalMemo (addedMedicalMemo) {
-      this.$store.commit('apodoc/addMedicalMemo', addedMedicalMemo)
+    addSocialTopic (addedSocialTopic) {
+      this.$store.commit('socialcompetences/addSocialTopic', addedSocialTopic)
     }
   }
 }

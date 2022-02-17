@@ -1,25 +1,25 @@
 <template>
   <div>
     <div>
-      <mobiledoc
-        v-for="(medicalMemo,key) in medicalMemo"
+      <socials
+        v-for="(socialTopic,key) in socialTopic"
         :key="key"
-        :medicalMemo="medicalMemo"
-        @delete-medicalmemo="deleteMedicalMemo"
+        :social-topic="socialTopic"
+        @delete-socialtopic="deleteSocialTopic"
       />
     </div>
   </div>
 </template>
 
 <script type = "text/javascript" >
-import Mobiledoc from './editingapodoc.vue'
+import Socials from './editsocials.vue'
 
 export default {
   components: {
-    Mobiledoc
+    Socials
   },
   props: {
-    medicalMemo: {
+    socialTopic: {
       type: Array,
       required: true,
       default: () => {
@@ -28,9 +28,9 @@ export default {
     }
   },
   methods: {
-    deleteMedicalMemo (medicalMemo) {
-      const medicalIndex = this.mobiledoc.indexOf(medicalMemo)
-      this.mobiledoc.splice(medicalIndex, 1)
+    deleteSocialTopic (socialTopic) {
+      const socialIndex = this.socials.indexOf(socialTopic)
+      this.socials.splice(socialIndex, 1)
     }
   }
 }

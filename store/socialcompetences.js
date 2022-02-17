@@ -31,12 +31,12 @@ export const mutations = {
     })
   },
   deleteSocialTopic (state, deletedSocialTopic) {
-    const socialIndex = state.socially.indexOf(deletedSocialTopic)
-    state.socially.splice(socialIndex, 1)
+    const socialIndex = state.socials.indexOf(deletedSocialTopic)
+    state.socials.splice(socialIndex, 1)
   },
   updateSocialTopic (state, updatedSocialTopic) {
-    const socialIndex = state.socially.indexOf(updatedSocialTopic.old)
-    state.socially[socialIndex].topictitle = updatedSocialTopic.new.topictitle
-    state.socially[socialIndex].topictext = updatedSocialTopic.new.topictext
+    const socialIndex = state.socials.indexOf(updatedSocialTopic.old)
+    state.socials[socialIndex].topictitle = updatedSocialTopic.new.topictitle
+    state.socials[socialIndex].topictext = updatedSocialTopic.new.topictext
   }
 }

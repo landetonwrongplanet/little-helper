@@ -8,10 +8,10 @@
         <NuxtLink to="/moodboard">
           Mood validation
         </NuxtLink><br>
-         <NuxtLink to="/apocare">
+        <NuxtLink to="/apocare">
           Medical Intervention
         </NuxtLink><br>
-         <NuxtLink to="/notes">
+        <NuxtLink to="/notes">
           Notes
         </NuxtLink><br>
         <NuxtLink to="/socially">
