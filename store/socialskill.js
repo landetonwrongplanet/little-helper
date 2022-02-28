@@ -58,9 +58,9 @@ export const state = () => ({
       id: 3,
       title: 'Sitzungen',
       text: 'Besprechungen, welche lange andauern; Aperos'
-    },
-    ],
-    
+    }
+    ]
+
   },
   {
     id: 2,
@@ -76,8 +76,8 @@ export const state = () => ({
       title: 'Verständnisprobleme',
       text: 'Aufgaben die aufgetragen werden, missverstehen'
     }
-    ],
-    
+    ]
+
   },
   {
     id: 3,
@@ -102,9 +102,9 @@ export const state = () => ({
       id: 3,
       title: 'Reiseweg',
       text: 'Reiseweg mit mehrmaligem Umsteigen'
-    },
-    ],
-    
+    }
+    ]
+
   },
   {
     id: 4,
@@ -144,9 +144,9 @@ export const state = () => ({
       id: 6,
       title: 'Telefonieren',
       text: 'Anrufe tätigen'
-    },
-    ],
-    
+    }
+    ]
+
   },
   {
     id: 5,
@@ -167,7 +167,7 @@ export const state = () => ({
       title: 'Licht',
       text: 'Grelles oder helles Licht'
     }
-    ],
+    ]
   },
   {
     id: 6,
@@ -188,8 +188,8 @@ export const state = () => ({
       title: 'Menschenkontakt',
       text: 'Von fremden Menschen angesprochen werden'
     }
-    ],
-    
+    ]
+
   }
   ]
 })

@@ -1,4 +1,4 @@
- <template>
+<template>
   <div class="ui basic content center aligned segment">
     <button v-show="!isCreating" class="ui basic button icon" @click="openForm">
       <i class="plus icon" />

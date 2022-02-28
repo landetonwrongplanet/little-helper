@@ -14,6 +14,9 @@
         <NuxtLink to="/notes">
           Notes
         </NuxtLink><br>
+        <NuxtLink to="/learnemotions">
+          Learn emotions
+        </NuxtLink><br>
       </div>
     </div>
     <div>

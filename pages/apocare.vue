@@ -16,6 +16,12 @@
         </NuxtLink><br>
         <NuxtLink to="/socially">
           Social competences
+        </NuxtLink><br>
+        <NuxtLink to="/learnemotions">
+          Learn emotions
+        </NuxtLink><br>
+        <NuxtLink to="/focustimer">
+          Your focustimer
         </NuxtLink>
       </div>
     </div>
