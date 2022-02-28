@@ -3,20 +3,20 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ socialTopic.topictitle }}
+          {{ Timer.topictitle }}
         </div>
         <div class="meta">
-          {{ socialTopic.topictext }}
+          {{ Timer.topictext }}
         </div>
         <div>
-          {{ socialTopic.date | dateformat }}
+          {{ Timer.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(socialTopic)" />
+            <i class="edit icon" @click="showForm(Timer)" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteSocialTopic(socialTopic)" />
+            <i class="trash icon" @click="deleteSocialTopic(Timer)" />
           </span>
         </div>
       </div>
@@ -24,14 +24,14 @@
         <div class="ui Form">
           <div class="field">
             <label>Headline</label>
-            <input v-model="updatedSocialTopic.topictitle" type="text">
+            <input v-model="updatedTimer.topictitle" type="text">
           </div>
           <div class="field">
             <label>Memo</label>
-            <input v-model="updatedSocialTopic.topictext" type="text">
+            <input v-model="updatedTimer.topictext" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(socialTopic)">
+            <button class="ui basic blue button" @click="hideForm(Timer)">
               Close X
             </button>
           </div>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props: {
-    socialTopic: {
+    Timer: {
       type: Object,
       required: true,
       default: () => {
@@ -66,24 +66,24 @@ export default {
       topicTitle: '',
       topicText: '',
       isCreating: false,
-      updatedSocialTopic: {
+      updatedTime: {
         topictitle: '',
         topictext: ''
       }
     }
   },
   methods: {
-    showForm (socialTopic) {
+    showForm (Timer) {
       this.isEditing = true
-      this.updatedSocialTopic.topictitle = socialTopic.topictitle
-      this.updatedSocialTopic.topictext = socialTopic.topictext
+      this.updatedTime.topictitle = Timer.topictitle
+      this.updatedTime.topictext = Timer.topictext
     },
-    hideForm (socialTopic) {
+    hideForm (Timer) {
       this.isEditing = false
-      this.$store.commit('socialcompetences/updateSocialTopic', { old: socialTopic, new: this.updatedSocialTopic })
+      this.$store.commit('timerstore/updateTime', { old: Timer, new: this.updatedTime })
     },
-    deleteSocialTopic (deletedSocialTopic) {
-      this.$store.commit('socialcompetences/deleteSocialTopic', deletedSocialTopic)
+    deleteTime (deletedTime) {
+      this.$store.commit('timerstore/deleteTime', deletedTime)
     },
     openForm () {
       this.isCreating = true

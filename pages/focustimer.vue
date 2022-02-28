@@ -20,33 +20,33 @@
       </div>
     </div>
     <div>
-      <socialCompetences :social-topic="socialTopic" />
-      <createSocialTopic @create-socialtopic="addSocialTopic" />
+      <times :times="Timer" />
+      <createTimes @create-time="addTimer" />
     </div>
   </div>
 </template>
 
 <script>
-import socialCompetences from '~/components/listsocials.vue'
-import createSocialTopic from '~/components/createsocials.vue'
+import times from '~/components/listtimer.vue'
+import createTimes from '~/components/createtimer.vue'
 export default {
   name: 'App',
   components: {
-    socialCompetences,
-    createSocialTopic
+    times,
+    createTimes
   },
   data () {
     return {
     }
   },
   computed: {
-    socialTopic () {
-      return this.$store.state.socialcompetences.socials
+    Timer () {
+      return this.$store.state.timestore.times
     }
   },
   methods: {
-    addSocialTopic (addedSocialTopic) {
-      this.$store.commit('socialcompetences/addSocialTopic', addedSocialTopic)
+    addTimer (addedTimer) {
+      this.$store.commit('timerstore/addTimer', addedTimer)
     }
   }
 }

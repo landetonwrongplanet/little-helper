@@ -1,25 +1,25 @@
 <template>
   <div>
     <div>
-      <socials
-        v-for="(socialTopic,key) in socialTopic"
+      <times
+        v-for="(Timer,key) in Timer"
         :key="key"
-        :social-topic="socialTopic"
-        @delete-socialtopic="deleteSocialTopic"
+        :Timer="Timer"
+        @delete-times="deleteTime"
       />
     </div>
   </div>
 </template>
 
 <script type = "text/javascript" >
-import Socials from './editsocials.vue'
+import Times from './edittimer.vue'
 
 export default {
   components: {
-    Socials
+    Times
   },
   props: {
-    socialTopic: {
+    Timer: {
       type: Array,
       required: true,
       default: () => {
@@ -28,9 +28,9 @@ export default {
     }
   },
   methods: {
-    deleteSocialTopic (socialTopic) {
-      const socialIndex = this.socials.indexOf(socialTopic)
-      this.socials.splice(socialIndex, 1)
+    deleteTime (Timer) {
+      const timeIndex = this.times.indexOf(Timer)
+      this.times.splice(timeIndex, 1)
     }
   }
 }
