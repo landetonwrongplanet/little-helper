@@ -1,4 +1,4 @@
- <template>
+<template>
   <div class="ui basic content center aligned segment">
     <button v-show="!isCreating" class="ui basic button icon" @click="openForm">
       <i class="plus icon" />
@@ -8,11 +8,11 @@
         <div class="ui form">
           <div class="field">
             <label>Headline</label>
-            <input ref="title" v-model="kardexTitle" type="text" defaultValue="">
+            <input ref="title" v-model="topicTitle" type="text" defaultValue="">
           </div>
           <div class="field">
             <label>Memo</label>
-            <input ref="project" v-model="kardexText" type="text" defaultValue="">
+            <input ref="project" v-model="topicText" type="text" defaultValue="">
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="sendForm()">
@@ -32,8 +32,8 @@
 export default {
   data () {
     return {
-      kardexTitle: '',
-      kardexText: '',
+      topicTitle: '',
+      topicText: '',
       isCreating: false
     }
   },
@@ -45,15 +45,15 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      if (this.kardexTitle.length > 0 && this.kardexText.length > 0) {
-        const kardextitle = this.kardexTitle
-        const kardextext = this.kardexText
-        this.$emit('create-medicalmemo', {
-          kardextitle,
-          kardextext,
+      if (this.topicTitle.length > 0 && this.topicText.length > 0) {
+        const topictitle = this.topicTitle
+        const topictext = this.topicText
+        this.$emit('create-socialtopic', {
+          topictitle,
+          topictext,
           date: Date.now()
         })
-        this.kardexText = ''
+        this.topicText = ''
       }
       this.isCreating = false
     }
