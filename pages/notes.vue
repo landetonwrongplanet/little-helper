@@ -16,7 +16,7 @@
         </NuxtLink><br>
         <NuxtLink to="/socially">
           Social competences
-        </NuxtLink>
+        </NuxtLink><br>
         <NuxtLink to="/learnemotions">
           Learn emotions
         </NuxtLink><br>
