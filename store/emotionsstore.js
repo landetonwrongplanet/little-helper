@@ -1,22 +1,22 @@
 export const state = () => ({
-  socials: [{
-    topictitle: 'Hausaufgaben vergessen',
-    topictext: 'Heute habe ich meine Hausaufgaben vergessen! Welch eine Schande!',
+  emotions: [{
+    image: 'Hausaufgaben vergessen',
+    declaration: 'Heute habe ich meine Hausaufgaben vergessen! Welch eine Schande!',
     done: false,
     date: '1629270742839'
   }, {
-    topictitle: 'Goldfisch rutschte auf dem Parkett aus',
-    topictext: 'Heute morgen rutschte mein Goldfisch im Wohnzimmer auf seiner Flosse aus',
+    image: 'Goldfisch rutschte auf dem Parkett aus',
+    declaration: 'Heute morgen rutschte mein Goldfisch im Wohnzimmer auf seiner Flosse aus',
     done: true,
     date: '1629270742839'
   }, {
-    topictitle: 'Essen verbrannt',
-    topictext: 'Meine Pfanne wurde zu heiss, das Schnitzel verkohlt',
+    image: 'Essen verbrannt',
+    declaration: 'Meine Pfanne wurde zu heiss, das Schnitzel verkohlt',
     done: false,
     date: '1629270742839'
   }, {
-    topictitle: 'Cellosaite gerissen',
-    topictext: 'Beim Celloüben riss mir eine Saite. ',
+    image: 'Cellosaite gerissen',
+    declaration: 'Beim Celloüben riss mir eine Saite. ',
     done: false,
     date: '1629270742839'
   }]
