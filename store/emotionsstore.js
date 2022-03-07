@@ -22,21 +22,21 @@ export const state = () => ({
   }]
 })
 export const mutations = {
-  addScocialTopic (state, addedSocialTopic) {
-    state.socials.push({
-      topictitle: addedSocialTopic.topictitle,
-      topictext: addedSocialTopic.topictext,
+  addEmotion (state, addedEmotion) {
+    state.emotions.push({
+      image: addedEmotion.image,
+      declaration: addedEmotion.declaration,
       done: false,
-      date: addedSocialTopic.date
+      date: addedEmotion.date
     })
   },
-  deleteSocialTopic (state, deletedSocialTopic) {
-    const socialIndex = state.socials.indexOf(deletedSocialTopic)
+  deleteEmotion (state, deletedEmotion) {
+    const emotionIndex = state.emotions.indexOf(deletedEmotion)
     state.socials.splice(socialIndex, 1)
   },
-  updateSocialTopic (state, updatedSocialTopic) {
-    const socialIndex = state.socials.indexOf(updatedSocialTopic.old)
-    state.socials[socialIndex].topictitle = updatedSocialTopic.new.topictitle
-    state.socials[socialIndex].topictext = updatedSocialTopic.new.topictext
+  updateEmotion (state, updatedEmotion) {
+    const emotionIndex = state.emotions.indexOf(updatedEmotion.old)
+    state.emotions[emotionIndex].image = updatedEmotion.new.image
+    state.emotions[emotionIndex].declaration = updatedEmotion.new.declaration
   }
 }
