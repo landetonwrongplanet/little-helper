@@ -3,20 +3,20 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ socialTopic.topictitle }}
+          {{ Emotion.image }}
         </div>
         <div class="meta">
-          {{ socialTopic.topictext }}
+          {{ Emotion.declaration }}
         </div>
         <div>
-          {{ socialTopic.date | dateformat }}
+          {{ Emotion.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(socialTopic)" />
+            <i class="edit icon" @click="showForm(Emotion)" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteSocialTopic(socialTopic)" />
+            <i class="trash icon" @click="deleteSocialTopic(Emotion)" />
           </span>
         </div>
       </div>
@@ -24,14 +24,14 @@
         <div class="ui Form">
           <div class="field">
             <label>Headline</label>
-            <input v-model="updatedSocialTopic.topictitle" type="text">
+            <input v-model="updatedEmotion.image" type="text">
           </div>
           <div class="field">
             <label>Memo</label>
-            <input v-model="updatedSocialTopic.topictext" type="text">
+            <input v-model="updatedEmotion.declaration" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(socialTopic)">
+            <button class="ui basic blue button" @click="hideForm(Emotion)">
               Close X
             </button>
           </div>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props: {
-    socialTopic: {
+    Emotion: {
       type: Object,
       required: true,
       default: () => {
@@ -63,27 +63,27 @@ export default {
   data () {
     return {
       isEditing: false,
-      topicTitle: '',
-      topicText: '',
+      image: '',
+      declaration: '',
       isCreating: false,
-      updatedSocialTopic: {
-        topictitle: '',
-        topictext: ''
+      updatedEmotion: {
+        image: '',
+        declaration: ''
       }
     }
   },
   methods: {
-    showForm (socialTopic) {
+    showForm (Emotion) {
       this.isEditing = true
-      this.updatedSocialTopic.topictitle = socialTopic.topictitle
-      this.updatedSocialTopic.topictext = socialTopic.topictext
+      this.updatedEmotion.image = Emotion.image
+      this.updatedEmotion.declaration = Emotion.declaration
     },
-    hideForm (socialTopic) {
+    hideForm (Emotion) {
       this.isEditing = false
-      this.$store.commit('socialcompetences/updateSocialTopic', { old: socialTopic, new: this.updatedSocialTopic })
+      this.$store.commit('emotionsstore/updateEmotion', { old: Emotion, new: this.updatedEmotion })
     },
-    deleteSocialTopic (deletedSocialTopic) {
-      this.$store.commit('socialcompetences/deleteSocialTopic', deletedSocialTopic)
+    deleteEmotion (deletedEmotion) {
+      this.$store.commit('emotionsstore/deleteEmotion', deletedEmotion)
     },
     openForm () {
       this.isCreating = true

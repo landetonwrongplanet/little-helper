@@ -2,7 +2,7 @@
   <div>
     <div class="wrapper">
       <div class="title">
-        <h1>Dies ist dein Sozialkompetenzen-Glossar</h1>
+        <h1>Hier kannst du das Lesen von Emotionen erlernen</h1>
       </div>
       <div class="title">
         <NuxtLink to="/moodboard">
@@ -26,33 +26,33 @@
       </div>
     </div>
     <div>
-      <socialCompetences :social-topic="socialTopic" />
-      <createSocialTopic @create-socialtopic="addSocialTopic" />
+      <Emotions :emotion-image="Emotion" />
+      <createemotion @create-emotion="addEmotion" />
     </div>
   </div>
 </template>
 
 <script>
-import socialCompetences from '~/components/listsocials.vue'
-import createSocialTopic from '~/components/createsocials.vue'
+import Emotions from '~/components/listemotions.vue'
+import Createemotion from '~/components/createemotion.vue'
 export default {
   name: 'App',
   components: {
-    socialCompetences,
-    createSocialTopic
+    Emotions,
+    Createemotion
   },
   data () {
     return {
     }
   },
   computed: {
-    socialTopic () {
-      return this.$store.state.socialcompetences.socials
+    Emotion () {
+      return this.$store.state.emotionsstore.emotions
     }
   },
   methods: {
-    addSocialTopic (addedSocialTopic) {
-      this.$store.commit('socialcompetences/addSocialTopic', addedSocialTopic)
+    addEmotion (addedEmotion) {
+      this.$store.commit('emotionsstore/addEmotion', addedEmotion)
     }
   }
 }

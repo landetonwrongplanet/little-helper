@@ -32,7 +32,7 @@ export const mutations = {
   },
   deleteEmotion (state, deletedEmotion) {
     const emotionIndex = state.emotions.indexOf(deletedEmotion)
-    state.socials.splice(socialIndex, 1)
+    state.socials.splice(emotionIndex, 1)
   },
   updateEmotion (state, updatedEmotion) {
     const emotionIndex = state.emotions.indexOf(updatedEmotion.old)

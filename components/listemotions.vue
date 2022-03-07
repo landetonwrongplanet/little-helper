@@ -1,25 +1,25 @@
 <template>
   <div>
     <div>
-      <socials
-        v-for="(socialTopic,key) in socialTopic"
+      <emotions
+        v-for="(Emotion,key) in Emotion"
         :key="key"
-        :social-topic="socialTopic"
-        @delete-socialtopic="deleteSocialTopic"
+        :emotion-images="Emotion"
+        @delete-emotion="deleteEmotion"
       />
     </div>
   </div>
 </template>
 
 <script type = "text/javascript" >
-import Socials from './editsocials.vue'
+import Emotions from './editemotion.vue'
 
 export default {
   components: {
-    Socials
+    Emotions
   },
   props: {
-    socialTopic: {
+    Emotion: {
       type: Array,
       required: true,
       default: () => {
@@ -28,9 +28,9 @@ export default {
     }
   },
   methods: {
-    deleteSocialTopic (socialTopic) {
-      const socialIndex = this.socials.indexOf(socialTopic)
-      this.socials.splice(socialIndex, 1)
+    deleteEmotion (Emotion) {
+      const emotionIndex = this.emotions.indexOf(Emotion)
+      this.emotions.splice(emotionIndex, 1)
     }
   }
 }
