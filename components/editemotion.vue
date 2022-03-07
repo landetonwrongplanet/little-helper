@@ -3,20 +3,20 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ Emotion.image }}
+          {{ emotionEntry.image }}
         </div>
         <div class="meta">
-          {{ Emotion.declaration }}
+          {{ emotionEntry.declaration }}
         </div>
         <div>
-          {{ Emotion.date | dateformat }}
+          {{ emotionEntry.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(Emotion)" />
+            <i class="edit icon" @click="showForm(emotionEntry)" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteSocialTopic(Emotion)" />
+            <i class="trash icon" @click="deleteEmotion(emotionEntry)" />
           </span>
         </div>
       </div>
@@ -31,7 +31,7 @@
             <input v-model="updatedEmotion.declaration" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(Emotion)">
+            <button class="ui basic blue button" @click="hideForm(emotionEntry)">
               Close X
             </button>
           </div>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props: {
-    Emotion: {
+    emotionEntry: {
       type: Object,
       required: true,
       default: () => {

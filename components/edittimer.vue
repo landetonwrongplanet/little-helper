@@ -3,20 +3,20 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ Timer.topictitle }}
+          {{ times.topictitle }}
         </div>
         <div class="meta">
-          {{ Timer.topictext }}
+          {{ times.topictext }}
         </div>
         <div>
-          {{ Timer.date | dateformat }}
+          {{ times.date | dateformat }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(Timer)" />
+            <i class="edit icon" @click="showForm(times)" />
           </span>
           <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteSocialTopic(Timer)" />
+            <i class="trash icon" @click="deleteTime(times)" />
           </span>
         </div>
       </div>
@@ -24,14 +24,14 @@
         <div class="ui Form">
           <div class="field">
             <label>Headline</label>
-            <input v-model="updatedTimer.topictitle" type="text">
+            <input v-model="updatedTime.topictitle" type="text">
           </div>
           <div class="field">
             <label>Memo</label>
-            <input v-model="updatedTimer.topictext" type="text">
+            <input v-model="updatedTime.topictext" type="text">
           </div>
           <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(Timer)">
+            <button class="ui basic blue button" @click="hideForm(times)">
               Close X
             </button>
           </div>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props: {
-    Timer: {
+    times: {
       type: Object,
       required: true,
       default: () => {

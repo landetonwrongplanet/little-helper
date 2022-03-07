@@ -2,9 +2,9 @@
   <div>
     <div>
       <emotions
-        v-for="(Emotion,key) in Emotion"
+        v-for="(emotion,key) in emotionEntries"
         :key="key"
-        :emotion-images="Emotion"
+        :emotion-entry="emotion"
         @delete-emotion="deleteEmotion"
       />
     </div>
@@ -19,7 +19,7 @@ export default {
     Emotions
   },
   props: {
-    Emotion: {
+    emotionEntries: {
       type: Array,
       required: true,
       default: () => {

@@ -2,9 +2,9 @@
   <div>
     <div>
       <times
-        v-for="(Timer,key) in Timer"
+        v-for="(timer,key) in times"
         :key="key"
-        :Timer="Timer"
+        :times="timer"
         @delete-times="deleteTime"
       />
     </div>
@@ -19,7 +19,7 @@ export default {
     Times
   },
   props: {
-    Timer: {
+    times: {
       type: Array,
       required: true,
       default: () => {

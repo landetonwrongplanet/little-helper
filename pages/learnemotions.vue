@@ -26,7 +26,7 @@
       </div>
     </div>
     <div>
-      <Emotions :emotion-image="Emotion" />
+      <Emotions :emotion-entries="emotions" />
       <createemotion @create-emotion="addEmotion" />
     </div>
   </div>
@@ -46,7 +46,7 @@ export default {
     }
   },
   computed: {
-    Emotion () {
+    emotions () {
       return this.$store.state.emotionsstore.emotions
     }
   },
