@@ -48,7 +48,7 @@ export default {
       if (this.topicTitle.length > 0 && this.topicText.length > 0) {
         const topictitle = this.topicTitle
         const topictext = this.topicText
-        this.$emit('create-socialtopic', {
+        this.$emit('create-time', {
           topictitle,
           topictext,
           date: Date.now()
