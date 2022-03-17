@@ -29,17 +29,27 @@
       <diaryEntry :entries="entries" />
       <createEntry @create-entry="addEntry" />
     </div>
+        <div>
+      <div>
+        <Moods :moods="moods" />
+        <CreateMood @create-mood="addMood" />
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
 import diaryEntry from '~/components/listentries'
 import createEntry from '~/components/createentry.vue'
+import Moods from '~/components/listmoods'
+import CreateMood from '~/components/createmood.vue'
+
 export default {
   name: 'App',
   components: {
     diaryEntry,
-    createEntry
+    createEntry,
+    Moods,
+    CreateMood
   },
   data () {
     return {
@@ -48,11 +58,17 @@ export default {
   computed: {
     entries () {
       return this.$store.state.diary.entries
+    },
+    moods () {
+      return this.$store.state.mood.moods
     }
   },
   methods: {
     addEntry (addedEntry) {
       this.$store.commit('diary/addEntry', addedEntry)
+    },
+    addMood (addedMood) {
+      this.$store.commit('mood/addMood', addedMood)
     }
   }
 }
