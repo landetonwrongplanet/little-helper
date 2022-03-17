@@ -28,7 +28,7 @@
     <div>
       <storeNote :notes="notes" />
       <createNote @create-note="addNote" />
-      <vue-markdown :source="source" :plugins='plugins' > </vue-markdown>
+      <vue-markdown :source="source" :plugins="plugins" />
     </div>
   </div>
 </template>

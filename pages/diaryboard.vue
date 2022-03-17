@@ -29,7 +29,7 @@
       <diaryEntry :entries="entries" />
       <createEntry @create-entry="addEntry" />
     </div>
-        <div>
+    <div>
       <div>
         <Moods :moods="moods" />
         <CreateMood @create-mood="addMood" />
