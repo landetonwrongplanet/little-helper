@@ -28,29 +28,33 @@
     <div>
       <storeNote :notes="notes" />
       <createNote @create-note="addNote" />
-      <vue-simple-markdown :source="source"></vue-simple-markdown>
+      <vue-markdown :source="source" :plugins='plugins' > </vue-markdown>
     </div>
   </div>
 </template>
 
 <script>
+import VueMarkdown from '@adapttive/vue-markdown'
+import taskLists from 'markdown-it-task-lists'
 import storeNote from '~/components/listnotes.vue'
 import createNote from '~/components/createnote.vue'
-// import VueMarkdown from 'vue-markdown/src/VueMarkdown'
-
-import VueSimpleMarkdown from 'vue-simple-markdown'
-
 
 export default {
   name: 'App',
   components: {
-    // VueMarkdown,
-    VueSimpleMarkdown,
+    VueMarkdown,
     storeNote,
     createNote
   },
   data () {
     return {
+      plugins: [
+        {
+          plugin: taskLists,
+          options: { enabled: this.taskLists }
+        }
+      ],
+      source: '- [ ] blabla'
     }
   },
   computed: {
