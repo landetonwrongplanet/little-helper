@@ -1,22 +1,22 @@
 
 export const state = () => ({
   entries: [{
-    title: 'Hausaufgaben vergessen',
+    title: 'Stress in der Schule',
     entry: 'Heute habe ich meine Hausaufgaben vergessen! Welch eine Schande!',
     done: false,
     date: '1629270742839'
   }, {
-    title: 'Goldfisch rutschte auf dem Parkett aus',
+    title: 'Haustier verletzt',
     entry: 'Heute morgen rutschte mein Goldfisch im Wohnzimmer auf seiner Flosse aus',
     done: true,
     date: '1629270742839'
   }, {
-    title: 'Essen verbrannt',
+    title: 'Mühe mit Kochen',
     entry: 'Meine Pfanne wurde zu heiss, das Schnitzel verkohlt',
     done: false,
     date: '1629270742839'
   }, {
-    title: 'Cellosaite gerissen',
+    title: 'Fauxpas beim Hobby',
     entry: 'Beim Celloüben riss mir eine Saite. ',
     done: false,
     date: '1629270742839'

@@ -1,22 +1,22 @@
 export const state = () => ({
   mobiledoc: [{
-    kardextitle: 'Hausaufgaben vergessen',
-    kardextext: 'Heute habe ich meine Hausaufgaben vergessen! Welch eine Schande!',
+    kardextitle: 'Diagnosen',
+    kardextext: 'Asperger, Migräne',
     done: false,
     date: '1629270742839'
   }, {
-    kardextitle: 'Goldfisch rutschte auf dem Parkett aus',
-    kardextext: 'Heute morgen rutschte mein Goldfisch im Wohnzimmer auf seiner Flosse aus',
+    kardextitle: 'Medikamente',
+    kardextext: 'Täglich 2 Tropfen Vitamin D3',
     done: true,
     date: '1629270742839'
   }, {
-    kardextitle: 'Essen verbrannt',
-    kardextext: 'Meine Pfanne wurde zu heiss, das Schnitzel verkohlt',
+    kardextitle: 'Hilfe bei Overload',
+    kardextext: 'Stimmingtools, aus der Situation gehen, Noise Cancelling Kopfhörer anziehen',
     done: false,
     date: '1629270742839'
   }, {
-    kardextitle: 'Cellosaite gerissen',
-    kardextext: 'Beim Celloüben riss mir eine Saite. ',
+    kardextitle: 'Kontaktdaten Therapeut',
+    kardextext: 'Herr Dr. Max Mustermann, Twofoldstrasse 1 2222 Oerlikon, 01379 10 11 12',
     done: false,
     date: '1629270742839'
   }]

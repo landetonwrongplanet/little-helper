@@ -1,22 +1,22 @@
 export const state = () => ({
   emotions: [{
-    image: 'Hausaufgaben vergessen',
-    declaration: 'Heute habe ich meine Hausaufgaben vergessen! Welch eine Schande!',
+    image: 'Bild glücklich',
+    declaration: 'Diese Person sieht glücklich aus',
     done: false,
     date: '1629270742839'
   }, {
-    image: 'Goldfisch rutschte auf dem Parkett aus',
-    declaration: 'Heute morgen rutschte mein Goldfisch im Wohnzimmer auf seiner Flosse aus',
+    image: 'Bild traurig',
+    declaration: 'Diese Person sieht traurig aus',
     done: true,
     date: '1629270742839'
   }, {
-    image: 'Essen verbrannt',
-    declaration: 'Meine Pfanne wurde zu heiss, das Schnitzel verkohlt',
+    image: 'Bild wütend',
+    declaration: 'Diese Person sieht wütend aus',
     done: false,
     date: '1629270742839'
   }, {
-    image: 'Cellosaite gerissen',
-    declaration: 'Beim Celloüben riss mir eine Saite. ',
+    image: 'Bild müde',
+    declaration: 'Diese Person sieht müde aus',
     done: false,
     date: '1629270742839'
   }]
