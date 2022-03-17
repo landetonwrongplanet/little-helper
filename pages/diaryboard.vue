@@ -2,7 +2,7 @@
   <div>
     <div class="wrapper">
       <div class="title">
-        <h1>Dies ist dein persönliches Tagebuch📝</h1>
+        <h1>Dies ist dein persönliches Tagebuch📝 Hier kannst du ausserdem auch deine Stimmung tracken</h1>
       </div>
       <div class="title">
         <NuxtLink to="/moodboard">
