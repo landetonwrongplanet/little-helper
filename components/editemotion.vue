@@ -3,7 +3,7 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ emotionEntry.image }}
+          <img class="pictures" :src="require('@/static/'+ emotionEntry.image)">
         </div>
         <div class="meta">
           {{ emotionEntry.declaration }}

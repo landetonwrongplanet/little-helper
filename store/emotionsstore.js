@@ -1,21 +1,61 @@
 export const state = () => ({
   emotions: [{
-    image: 'Bild glücklich',
+    image: 'glücklich-a.jpg',
     declaration: 'Diese Person sieht glücklich aus',
     done: false,
     date: '1629270742839'
   }, {
-    image: 'Bild traurig',
+    image: 'traurig-a.jpg',
     declaration: 'Diese Person sieht traurig aus',
     done: true,
     date: '1629270742839'
   }, {
-    image: 'Bild wütend',
+    image: 'sauer-a.jpg',
     declaration: 'Diese Person sieht wütend aus',
     done: false,
     date: '1629270742839'
   }, {
-    image: 'Bild müde',
+    image: 'müde-a.jpg',
+    declaration: 'Diese Person sieht müde aus',
+    done: false,
+    date: '1629270742839'
+  }, {
+    image: 'skeptisch-a.jpg',
+    declaration: 'Diese Person sieht müde aus',
+    done: false,
+    date: '1629270742839'
+  }, {
+    image: 'genervt-a.jpg',
+    declaration: 'Diese Person sieht müde aus',
+    done: false,
+    date: '1629270742839'
+  }, {
+    image: 'verletzt2-a.jpg',
+    declaration: 'Diese Person sieht müde aus',
+    done: false,
+    date: '1629270742839'
+  }, {
+    image: 'erschrocken-a.jpg',
+    declaration: 'Diese Person sieht müde aus',
+    done: false,
+    date: '1629270742839'
+  }, {
+    image: 'ängstlich-a.jpg',
+    declaration: 'Diese Person sieht müde aus',
+    done: false,
+    date: '1629270742839'
+  }, {
+    image: 'gelangweilt-a.jpg',
+    declaration: 'Diese Person sieht müde aus',
+    done: false,
+    date: '1629270742839'
+  }, {
+    image: 'interessiert-a.jpg',
+    declaration: 'Diese Person sieht müde aus',
+    done: false,
+    date: '1629270742839'
+  }, {
+    image: 'verwirrt2-a.jpg',
     declaration: 'Diese Person sieht müde aus',
     done: false,
     date: '1629270742839'
