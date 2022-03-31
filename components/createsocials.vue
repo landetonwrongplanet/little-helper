@@ -7,12 +7,12 @@
       <div class="content">
         <div class="ui form">
           <div class="field">
-            <label>Kategorie</label>
-            <input ref="title" v-model="topicTitle" type="text" defaultValue="">
+            <label>ID</label>
+            <input ref="title" v-model="id" type="text" defaultValue="">
           </div>
           <div class="field">
-            <label>Memo</label>
-            <input ref="project" v-model="topicText" type="text" defaultValue="">
+            <label>Bezeichnung</label>
+            <input ref="project" v-model="name" type="text" defaultValue="">
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="sendForm()">
@@ -32,8 +32,8 @@
 export default {
   data () {
     return {
-      topicTitle: '',
-      topicText: '',
+      id: '',
+      name: '',
       isCreating: false
     }
   },
@@ -45,15 +45,14 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      if (this.topicTitle.length > 0 && this.topicText.length > 0) {
-        const topictitle = this.topicTitle
-        const topictext = this.topicText
+      if (this.id.length > 0 && this.name.length > 0) {
+        const id = this.id
+        const name = this.name
         this.$emit('create-socialtopic', {
-          topictitle,
-          topictext,
-          date: Date.now()
+          id,
+          name
         })
-        this.topicText = ''
+        this.name = ''
       }
       this.isCreating = false
     }

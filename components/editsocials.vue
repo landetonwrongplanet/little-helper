@@ -3,13 +3,10 @@
     <div class="ui centered card">
       <div v-show="!isEditing" class="content">
         <div class="header">
-          {{ socialTopic.topictitle }}
+          {{ socialTopic.id }}
         </div>
         <div class="meta">
-          {{ socialTopic.topictext }}
-        </div>
-        <div>
-          {{ socialTopic.date | dateformat }}
+          {{ socialTopic.name }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
@@ -23,12 +20,12 @@
       <div v-show="isEditing" class="content">
         <div class="ui Form">
           <div class="field">
-            <label>Headline</label>
-            <input v-model="updatedSocialTopic.topictitle" type="text">
+            <label>ID</label>
+            <input v-model="updatedSocialTopic.id" type="text">
           </div>
           <div class="field">
-            <label>Memo</label>
-            <input v-model="updatedSocialTopic.topictext" type="text">
+            <label>Bezeichnung</label>
+            <input v-model="updatedSocialTopic.name" type="text">
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="hideForm(socialTopic)">
@@ -44,11 +41,6 @@
 
 export default {
   filters: {
-    dateformat (timestamp) {
-      const newDate = new Date()
-      newDate.setTime(timestamp)
-      return newDate.toLocaleString('de-CH', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })
-    }
   },
   props: {
     socialTopic: {
@@ -63,20 +55,20 @@ export default {
   data () {
     return {
       isEditing: false,
-      topicTitle: '',
-      topicText: '',
+      id: '',
+      name: '',
       isCreating: false,
       updatedSocialTopic: {
-        topictitle: '',
-        topictext: ''
+        id: '',
+        name: ''
       }
     }
   },
   methods: {
     showForm (socialTopic) {
       this.isEditing = true
-      this.updatedSocialTopic.topictitle = socialTopic.topictitle
-      this.updatedSocialTopic.topictext = socialTopic.topictext
+      this.updatedSocialTopic.id = socialTopic.id
+      this.updatedSocialTopic.name = socialTopic.name
     },
     hideForm (socialTopic) {
       this.isEditing = false
