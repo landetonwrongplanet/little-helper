@@ -7,7 +7,7 @@
       <div class="content">
         <div class="ui form">
           <div class="field">
-            <label>Headline</label>
+            <label>Kategorie</label>
             <input ref="title" v-model="topicTitle" type="text" defaultValue="">
           </div>
           <div class="field">
