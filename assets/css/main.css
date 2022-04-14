@@ -75,6 +75,7 @@ button, input, optgroup, select, textarea {
 }
 .ui .centered .card{
     width: 500px;
+    margin-bottom: 10px;
 }
 .ui form{
     width: 500px;
@@ -82,4 +83,19 @@ button, input, optgroup, select, textarea {
 .label
 {
     color: brown;
+}
+.pictures
+{
+    height: 200px;
+}
+
+.ui.card>.content{
+    margin:10px;
+}
+.content{
+    padding: 0px;
+}
+
+div{
+    margin: 10px;
 }

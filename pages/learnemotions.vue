@@ -27,19 +27,16 @@
     </div>
     <div>
       <Emotions :emotion-entries="emotions" />
-      <createemotion @create-emotion="addEmotion" />
     </div>
   </div>
 </template>
 
 <script>
 import Emotions from '~/components/listemotions.vue'
-import Createemotion from '~/components/createemotion.vue'
 export default {
   name: 'App',
   components: {
-    Emotions,
-    Createemotion
+    Emotions
   },
   data () {
     return {

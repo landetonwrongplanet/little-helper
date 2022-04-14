@@ -8,17 +8,6 @@
         <div class="meta">
           {{ emotionEntry.declaration }}
         </div>
-        <div>
-          {{ emotionEntry.date | dateformat }}
-        </div>
-        <div class="extra content">
-          <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(emotionEntry)" />
-          </span>
-          <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteEmotion(emotionEntry)" />
-          </span>
-        </div>
       </div>
       <div v-show="isEditing" class="content">
         <div class="ui Form">
@@ -44,11 +33,6 @@
 
 export default {
   filters: {
-    dateformat (timestamp) {
-      const newDate = new Date()
-      newDate.setTime(timestamp)
-      return newDate.toLocaleString('de-CH', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })
-    }
   },
   props: {
     emotionEntry: {

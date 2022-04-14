@@ -2,63 +2,51 @@ export const state = () => ({
   emotions: [{
     image: 'glücklich-a.jpg',
     declaration: 'Diese Person sieht glücklich aus',
-    done: false,
-    date: '1629270742839'
+    done: false
   }, {
     image: 'traurig-a.jpg',
     declaration: 'Diese Person sieht traurig aus',
-    done: true,
-    date: '1629270742839'
+    done: true
   }, {
     image: 'sauer-a.jpg',
     declaration: 'Diese Person sieht wütend aus',
-    done: false,
-    date: '1629270742839'
+    done: false
   }, {
     image: 'müde-a.jpg',
     declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
-  }, {
-    image: 'skeptisch-a.jpg',
-    declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
+    done: false
   }, {
     image: 'genervt-a.jpg',
-    declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
+    declaration: 'Diese Person sieht genervt aus',
+    done: false
   }, {
     image: 'verletzt2-a.jpg',
-    declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
+    declaration: 'Diese Person sieht verletzt aus',
+    done: false
   }, {
     image: 'erschrocken-a.jpg',
-    declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
+    declaration: 'Diese Person sieht erschrocken aus',
+    done: false
   }, {
     image: 'ängstlich-a.jpg',
-    declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
+    declaration: 'Diese Person sieht ängstlich aus',
+    done: false
   }, {
     image: 'gelangweilt-a.jpg',
-    declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
+    declaration: 'Diese Person sieht gelangweilt aus',
+    done: false
   }, {
     image: 'interessiert-a.jpg',
-    declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
+    declaration: 'Diese Person sieht interessiert aus',
+    done: false
   }, {
     image: 'verwirrt2-a.jpg',
-    declaration: 'Diese Person sieht müde aus',
-    done: false,
-    date: '1629270742839'
+    declaration: 'Diese Person sieht verwirrt aus',
+    done: false
+  }, {
+    image: 'skeptisch-a .jpg',
+    declaration: 'Diese Person sieht skeptisch aus',
+    done: false
   }]
 })
 export const mutations = {

@@ -8,7 +8,7 @@
         <div class="ui form">
           <div class="field">
             <label>Image</label>
-            <input ref="title" v-model="image" type="text" defaultValue="">
+            <input ref="title" v-model="image" type="text" defaultValue="" class="image">
           </div>
           <div class="field">
             <label>Declaration</label>
