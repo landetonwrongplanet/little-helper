@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     socialTopic () {
-      return this.$store.state.socialcompetences.socials
+      return this.$store.state.socialcompetences.situations
     }
   },
   methods: {
