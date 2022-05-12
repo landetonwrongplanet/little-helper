@@ -23,11 +23,11 @@
       <div v-show="isEditing" class="content">
         <div class="ui Form">
           <div class="field">
-            <label>Headline</label>
+            <label>Task</label>
             <input v-model="updatedTime.topictitle" type="text">
           </div>
           <div class="field">
-            <label>Memo</label>
+            <label>Time</label>
             <input v-model="updatedTime.topictext" type="text">
           </div>
           <div class="ui two button attached buttons">
@@ -44,11 +44,6 @@
 
 export default {
   filters: {
-    dateformat (timestamp) {
-      const newDate = new Date()
-      newDate.setTime(timestamp)
-      return newDate.toLocaleString('de-CH', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })
-    }
   },
   props: {
     times: {

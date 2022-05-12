@@ -7,11 +7,11 @@
       <div class="content">
         <div class="ui form">
           <div class="field">
-            <label>Headline</label>
+            <label>Task</label>
             <input ref="title" v-model="topicTitle" type="text" defaultValue="">
           </div>
           <div class="field">
-            <label>Memo</label>
+            <label>Time</label>
             <input ref="project" v-model="topicText" type="text" defaultValue="">
           </div>
           <div class="ui two button attached buttons">
@@ -50,8 +50,7 @@ export default {
         const topictext = this.topicText
         this.$emit('create-time', {
           topictitle,
-          topictext,
-          date: Date.now()
+          topictext
         })
         this.topicText = ''
       }

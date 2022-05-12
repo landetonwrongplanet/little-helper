@@ -21,7 +21,8 @@
     "markdown-it-task-lists": "^2.1.1",
     "nuxt": "^2.15.7",
     "vue-markdown": "^2.2.4",
-    "vue-simple-markdown": "^1.1.5"
+    "vue-simple-markdown": "^1.1.5",
+    "vuesax": "^4.0.1-alpha.25"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

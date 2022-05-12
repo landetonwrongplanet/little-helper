@@ -5,9 +5,6 @@
         <h1>Dies ist deine kleine Hausapotheke</h1>
       </div>
       <div class="title">
-        <NuxtLink to="/moodboard">
-          Mood validation
-        </NuxtLink><br>
         <NuxtLink to="/diaryboard">
           Diary
         </NuxtLink><br>

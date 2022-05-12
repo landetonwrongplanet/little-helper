@@ -1,24 +1,20 @@
 export const state = () => ({
   times: [{
-    topictitle: 'Hausaufgaben vergessen',
-    topictext: 'Heute habe ich meine Hausaufgaben vergessen! Welch eine Schande!',
-    done: false,
-    date: '1629270742839'
+    topictitle: 'Küche putzen',
+    topictext: '30 min',
+    done: false
   }, {
-    topictitle: 'Goldfisch rutschte auf dem Parkett aus',
-    topictext: 'Heute morgen rutschte mein Goldfisch im Wohnzimmer auf seiner Flosse aus',
-    done: true,
-    date: '1629270742839'
+    topictitle: 'Wohnung aufräumen',
+    topictext: '2h',
+    done: true
   }, {
-    topictitle: 'Essen verbrannt',
-    topictext: 'Meine Pfanne wurde zu heiss, das Schnitzel verkohlt',
-    done: false,
-    date: '1629270742839'
+    topictitle: 'Badezimmer putzen und saugen',
+    topictext: '1h',
+    done: false
   }, {
-    topictitle: 'Cellosaite gerissen',
-    topictext: 'Beim Celloüben riss mir eine Saite. ',
-    done: false,
-    date: '1629270742839'
+    topictitle: 'Pflanzen pflegen',
+    topictext: '30min',
+    done: false
   }]
 })
 export const mutations = {
@@ -26,8 +22,7 @@ export const mutations = {
     state.times.push({
       topictitle: addedTime.topictitle,
       topictext: addedTime.topictext,
-      done: false,
-      date: addedTime.date
+      done: false
     })
   },
   deleteTime (state, deletedTime) {

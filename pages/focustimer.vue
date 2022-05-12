@@ -5,9 +5,6 @@
         <h1>Dies ist dein focus-timer</h1>
       </div>
       <div class="title">
-        <NuxtLink to="/moodboard">
-          Mood validation
-        </NuxtLink><br>
         <NuxtLink to="/apocare">
           Medical Intervention
         </NuxtLink><br>

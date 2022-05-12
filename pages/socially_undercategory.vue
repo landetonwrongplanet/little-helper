@@ -23,7 +23,7 @@
       </div>
     </div>
     <div>
-      <socialCompetences :social-topic="socialTopic" />
+      <socialCompetences :social-topic="socialTopic.situations" />
       <createSocialTopic @create-socialtopic="addSocialTopic" />
     </div>
   </div>

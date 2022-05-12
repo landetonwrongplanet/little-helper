@@ -5,9 +5,6 @@
         <h1>Hier kannst du das Lesen von Emotionen erlernen</h1>
       </div>
       <div class="title">
-        <NuxtLink to="/moodboard">
-          Mood validation
-        </NuxtLink><br>
         <NuxtLink to="/apocare">
           Medical Intervention
         </NuxtLink><br>

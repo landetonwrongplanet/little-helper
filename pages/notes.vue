@@ -5,9 +5,6 @@
         <h1>Dies ist dein persönlicher Notizbereich</h1>
       </div>
       <div class="title">
-        <NuxtLink to="/moodboard">
-          Mood validation
-        </NuxtLink><br>
         <NuxtLink to="/apocare">
           Medical Intervention
         </NuxtLink><br>
@@ -27,7 +24,7 @@
     </div>
     <div>
       <storeNote :notes="notes" />
-      <createNote @create-note="addNote" />
+      <createNote @create-note="addNote" :source="source" :plugins="plugins" />
       <vue-markdown :source="source" :plugins="plugins" />
     </div>
   </div>
@@ -51,10 +48,11 @@ export default {
       plugins: [
         {
           plugin: taskLists,
-          options: { enabled: this.taskLists }
+          VueMarkdown,
+          options: { enabled: this.taskLists, this: VueMarkdown }
         }
       ],
-      source: '- [ ] blabla'
+      source: '{{VueMarkdown}} '
     }
   },
   computed: {
