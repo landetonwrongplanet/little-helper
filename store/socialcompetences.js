@@ -212,3 +212,10 @@ export const mutations = {
     state.socials[socialIndex].topictext = updatedSocialTopic.new.topictext
   }
 }
+export const getters = {
+  getCategoryById: (state) => {
+    return (id) => {
+      return state.socials.filter(category => category.id === parseInt(id))
+    }
+  }
+}

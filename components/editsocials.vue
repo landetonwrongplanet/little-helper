@@ -8,6 +8,9 @@
         <div class="meta">
           {{ socialTopic.name }}
         </div>
+        <NuxtLink :to="{path:'socially_undercategory', query:{category:socialTopic.id}}">
+          Medical Intervention
+        </NuxtLink><br>
         <div class="extra content">
           <span class="right floated edit icon">
             <i class="edit icon" @click="showForm(socialTopic)" />

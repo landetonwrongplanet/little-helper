@@ -23,28 +23,33 @@
       </div>
     </div>
     <div>
-      <socialCompetences :social-topic="socialTopic.situations" />
-      <createSocialTopic @create-socialtopic="addSocialTopic" />
+      <!-- <socialCompetences :social-topic="socialTopic.situations" />
+      <createSocialTopic @create-socialtopic="addSocialTopic" /> -->
     </div>
   </div>
 </template>
 
 <script>
-import socialCompetences from '~/components/listsocials.vue'
-import createSocialTopic from '~/components/createsocials.vue'
+// import socialCompetences from '~/components/listsocials.vue'
+// import createSocialTopic from '~/components/createsocials.vue'
+import { mapGetters } from 'vuex'
 export default {
   name: 'App',
   components: {
-    socialCompetences,
-    createSocialTopic
+  // socialCompetences,
+  // createSocialTopic
   },
   data () {
     return {
     }
   },
   computed: {
+    ...mapGetters('socialcompetences', ['getCategoryById']),
     socialTopic () {
       return this.$store.state.socialcompetences.situations
+    },
+    category () {
+      return this.getCategoryById(this.$route.query.category)
     }
   },
   methods: {
