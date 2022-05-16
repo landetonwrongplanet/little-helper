@@ -23,21 +23,18 @@
       </div>
     </div>
     <div>
-      <!-- <socialCompetences :social-topic="socialTopic.situations" />
-      <createSocialTopic @create-socialtopic="addSocialTopic" /> -->
+       <situations :social-topic="category[0].situations" />
     </div>
   </div>
 </template>
 
 <script>
-// import socialCompetences from '~/components/listsocials.vue'
-// import createSocialTopic from '~/components/createsocials.vue'
 import { mapGetters } from 'vuex'
+import situations from '~/components/listsocialcategory.vue'
 export default {
   name: 'App',
   components: {
-  // socialCompetences,
-  // createSocialTopic
+    situations
   },
   data () {
     return {

@@ -1,7 +1,6 @@
 <template>
   <div>
     <div>
-      {{ socialTopic }}
       <socials
         v-for="(socialTopic,key) in socialTopic"
         :key="key"
