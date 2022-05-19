@@ -50,7 +50,7 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      if (this.id.length > 0 && this.title.length > 0 && this.text.length > 0 ) {
+      if (this.id.length > 0 && this.title.length > 0 && this.text.length > 0) {
         const id = this.id
         const title = this.title
         const text = this.text
@@ -66,5 +66,3 @@ export default {
   }
 }
 </script>
-
-

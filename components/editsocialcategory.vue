@@ -32,7 +32,11 @@
           </div>
           <div class="field">
             <label>Bezeichnung</label>
-            <input v-model="updatedSocialTopic.name" type="text">
+            <input v-model="updatedSocialTopic.title" type="text">
+          </div>
+          <div class="field">
+            <label>Bezeichnung</label>
+            <input v-model="updatedSocialTopic.text" type="text">
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="hideForm(socialTopic)">
