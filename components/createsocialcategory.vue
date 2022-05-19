@@ -12,7 +12,11 @@
           </div>
           <div class="field">
             <label>Bezeichnung</label>
-            <input ref="project" v-model="name" type="text" defaultValue="">
+            <input ref="project" v-model="title" type="text" defaultValue="">
+          </div>
+          <div class="field">
+            <label>Bezeichnung</label>
+            <input ref="project" v-model="text" type="text" defaultValue="">
           </div>
           <div class="ui two button attached buttons">
             <button class="ui basic blue button" @click="sendForm()">
@@ -33,7 +37,8 @@ export default {
   data () {
     return {
       id: '',
-      name: '',
+      text: '',
+      title: '',
       isCreating: false
     }
   },
@@ -45,14 +50,16 @@ export default {
       this.isCreating = false
     },
     sendForm () {
-      if (this.id.length > 0 && this.name.length > 0) {
+      if (this.id.length > 0 && this.title.length > 0 && this.text.length > 0 ) {
         const id = this.id
-        const name = this.name
+        const title = this.title
+        const text = this.text
         this.$emit('create-socialtopic', {
           id,
-          name
+          title,
+          text
         })
-        this.name = ''
+        this.title = ''
       }
       this.isCreating = false
     }
