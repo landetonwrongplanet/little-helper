@@ -6,7 +6,11 @@
           {{ socialTopic.id }}
         </div>
         <div class="meta">
-          {{ socialTopic.name }}
+          {{ socialTopic.title }}
+        </div>
+           </div>
+        <div class="meta">
+          {{ socialTopic.text }}
         </div>
         <NuxtLink :to="{path:'socially_undercategory', query:{category:socialTopic.id}}">
           Medical Intervention
@@ -59,7 +63,8 @@ export default {
     return {
       isEditing: false,
       id: '',
-      name: '',
+      title: '',
+      text: '',
       isCreating: false,
       updatedSocialTopic: {
         id: '',
@@ -72,6 +77,7 @@ export default {
       this.isEditing = true
       this.updatedSocialTopic.id = socialTopic.id
       this.updatedSocialTopic.name = socialTopic.name
+      this.
     },
     hideForm (socialTopic) {
       this.isEditing = false
