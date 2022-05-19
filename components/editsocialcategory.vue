@@ -68,7 +68,8 @@ export default {
       isCreating: false,
       updatedSocialTopic: {
         id: '',
-        name: ''
+        title: '',
+        text: ''
       }
     }
   },
@@ -76,8 +77,8 @@ export default {
     showForm (socialTopic) {
       this.isEditing = true
       this.updatedSocialTopic.id = socialTopic.id
-      this.updatedSocialTopic.name = socialTopic.name
-      this.
+      this.updatedSocialTopic.title = socialTopic.title
+      this.updatedSocialTopic.text = socialTopic.text
     },
     hideForm (socialTopic) {
       this.isEditing = false
