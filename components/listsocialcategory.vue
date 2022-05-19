@@ -4,7 +4,7 @@
       <socials
         v-for="(socialTopic,key) in socialTopic"
         :key="key"
-        :social-topic="socialTopic"
+        :socialTopic="socialTopic"
         @delete-socialtopic="deleteSocialTopic"
       />
     </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script type = "text/javascript" >
-import Socials from './editsocials.vue'
+import Socials from './editsocialcategory.vue'
 
 export default {
   components: {
