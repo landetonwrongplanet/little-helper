@@ -23,7 +23,7 @@
       </div>
     </div>
     <div>
-       <situations :social-topic="category[0].situations" />
+      <situations :social-topic="category[0].situations" />
     </div>
   </div>
 </template>

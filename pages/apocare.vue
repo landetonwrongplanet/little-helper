@@ -19,6 +19,9 @@
         </NuxtLink><br>
         <NuxtLink to="/focustimer">
           Your focustimer
+        </NuxtLink><br>
+        <NuxtLink to="/timer">
+          Your timer
         </NuxtLink>
       </div>
     </div>

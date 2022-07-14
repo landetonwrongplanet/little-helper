@@ -8,44 +8,44 @@
         <div class="meta">
           {{ socialTopic.title }}
         </div>
-           </div>
-        <div class="meta">
-          {{ socialTopic.text }}
-        </div>
-        <NuxtLink :to="{path:'socially_undercategory', query:{category:socialTopic.id}}">
-          Medical Intervention
-        </NuxtLink><br>
-        <div class="extra content">
-          <span class="right floated edit icon">
-            <i class="edit icon" @click="showForm(socialTopic)" />
-          </span>
-          <span class="right floated trash icon">
-            <i class="trash icon" @click="deleteSocialTopic(socialTopic)" />
-          </span>
-        </div>
       </div>
-      <div v-show="isEditing" class="content">
-        <div class="ui Form">
-          <div class="field">
-            <label>ID</label>
-            <input v-model="updatedSocialTopic.id" type="text">
-          </div>
-          <div class="field">
-            <label>Bezeichnung</label>
-            <input v-model="updatedSocialTopic.title" type="text">
-          </div>
-          <div class="field">
-            <label>Bezeichnung</label>
-            <input v-model="updatedSocialTopic.text" type="text">
-          </div>
-          <div class="ui two button attached buttons">
-            <button class="ui basic blue button" @click="hideForm(socialTopic)">
-              Close X
-            </button>
-          </div>
+      <div class="meta">
+        {{ socialTopic.text }}
+      </div>
+      <NuxtLink :to="{path:'socially_undercategory', query:{category:socialTopic.id}}">
+        Medical Intervention
+      </NuxtLink><br>
+      <div class="extra content">
+        <span class="right floated edit icon">
+          <i class="edit icon" @click="showForm(socialTopic)" />
+        </span>
+        <span class="right floated trash icon">
+          <i class="trash icon" @click="deleteSocialTopic(socialTopic)" />
+        </span>
+      </div>
+    </div>
+    <div v-show="isEditing" class="content">
+      <div class="ui Form">
+        <div class="field">
+          <label>ID</label>
+          <input v-model="updatedSocialTopic.id" type="text">
+        </div>
+        <div class="field">
+          <label>Bezeichnung</label>
+          <input v-model="updatedSocialTopic.title" type="text">
+        </div>
+        <div class="field">
+          <label>Bezeichnung</label>
+          <input v-model="updatedSocialTopic.text" type="text">
+        </div>
+        <div class="ui two button attached buttons">
+          <button class="ui basic blue button" @click="hideForm(socialTopic)">
+            Close X
+          </button>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 <script type = "text/javascript" >

@@ -30,6 +30,7 @@
 </template>
 
 <script>
+
 import times from '~/components/listtimer.vue'
 import createTimes from '~/components/createtimer.vue'
 export default {

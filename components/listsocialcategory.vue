@@ -4,7 +4,7 @@
       <socials
         v-for="(socialTopic,key) in socialTopic"
         :key="key"
-        :socialTopic="socialTopic"
+        :social-topic="socialTopic"
         @delete-socialtopic="deleteSocialTopic"
       />
     </div>
