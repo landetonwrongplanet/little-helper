@@ -13,7 +13,7 @@
         {{ socialTopic.text }}
       </div>
       <NuxtLink :to="{path:'socially_undercategory', query:{category:socialTopic.id}}">
-        Medical Intervention
+        {{ socialTopic.title }}
       </NuxtLink><br>
       <div class="extra content">
         <span class="right floated edit icon">

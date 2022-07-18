@@ -1,7 +1,6 @@
 <template>
   <div>
     <div>
-      {{ socialTopic }}
       <socials
         v-for="(socialTopic,key) in socialTopic"
         :key="key"
@@ -13,7 +12,7 @@
 </template>
 
 <script type = "text/javascript" >
-import Socials from './editsocials.vue'
+import Socials from './editsocialcategory.vue'
 
 export default {
   components: {

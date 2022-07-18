@@ -1,7 +1,7 @@
 export const state = () => ({
   socials: [{
     id: 0,
-    name: 'Sozialleben',
+    title: 'Sozialleben',
     situations: [{
       id: 0,
       title: 'Restaurantbesuche',
@@ -37,7 +37,7 @@ export const state = () => ({
   },
   {
     id: 1,
-    name: 'Beruf',
+    title: 'Beruf',
     situations: [{
       id: 0,
       title: 'Stress',
@@ -64,7 +64,7 @@ export const state = () => ({
   },
   {
     id: 2,
-    name: 'Schule',
+    title: 'Schule',
     situations: [{
       id: 0,
       title: 'Interaktion mit Mitschülern/Lehrern',
@@ -81,7 +81,7 @@ export const state = () => ({
   },
   {
     id: 3,
-    name: 'Verkehr',
+    title: 'Verkehr',
     situations: [{
       id: 0,
       title: 'Angesprochen werden',
@@ -108,7 +108,7 @@ export const state = () => ({
   },
   {
     id: 4,
-    name: 'Pflege/Administratives',
+    title: 'Pflege/Administratives',
     situations: [{
       id: 0,
       title: 'Haushalt',
@@ -150,7 +150,7 @@ export const state = () => ({
   },
   {
     id: 5,
-    name: 'Sensorischen',
+    title: 'Sensorischen',
     situations: [{
       id: 0,
       title: 'Lärm',
@@ -171,7 +171,7 @@ export const state = () => ({
   },
   {
     id: 6,
-    name: 'Sonstiges',
+    title: 'Sonstiges',
     situations: [{
       id: 0,
       title: 'Orientierung',
