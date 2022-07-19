@@ -150,7 +150,7 @@ export const state = () => ({
   },
   {
     id: 5,
-    title: 'Sensorischen',
+    title: 'Sensorisches',
     situations: [{
       id: 0,
       title: 'Lärm',
