@@ -4,6 +4,15 @@
     <BaseTimer
       :time-left="timeLeft"
     />
+    <p style="font-size:50px; float: left;transform:rotate(90deg); margin: 25px;" @click="startTimer()">
+      &#128316;
+    </p>
+    <p style="font-size:50px; float: left ;margin: 25px;">
+      &#9208;
+    </p>
+    <p style="font-size:50px ; float: left;margin: 25px;">
+      &#9210;
+    </p>
   </div>
 </template>
 <script>
@@ -30,7 +39,12 @@ export default {
   },
   methods: {
     startTimer () {
-      this.timerInterval = setInterval(() => (this.timePassed += 1), 1000)
+      this.timerInterval = setInterval(() => {
+        this.timePassed += 1
+        if (this.timeLeft === 0) {
+          clearInterval(this.timerInterval)
+        }
+      }, 1000)
     }
   }
 }

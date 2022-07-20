@@ -23,18 +23,18 @@
       </div>
     </div>
     <div>
-      <situations :social-topic="category[0].situations" />
+      <socialcategory :social-topic="category[0].situations" />
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import situations from '~/components/listsocialcategory.vue'
+import socialcategory from '~/components/list_undercategory.vue'
 export default {
   name: 'App',
   components: {
-    situations
+    socialcategory
   },
   data () {
     return {

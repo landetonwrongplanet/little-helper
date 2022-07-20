@@ -43,14 +43,26 @@
 
 export default {
   props: {
+    alertThreshold: {
+      type: Number,
+      default: 5
+    },
+    warningThreshold: {
+      type: Number,
+      default: 10
+    },
     timeLeft: {
       type: Number,
       required: true
     }
   },
+  data () {
+    return {
+      name: 'Domenik'
+    }
+  },
   computed: {
     formattedTimeLeft () {
-      console.log(this.timeLeft)
       const timeLeft = this.timeLeft
       const minutes = Math.floor(timeLeft / 60)
       let seconds = timeLeft % 60
@@ -70,13 +82,16 @@ export default {
     circleDasharray () {
       return `${(this.timeFraction * this.formattedTimeLeft).toFixed(0)} 283`
     }
+  },
+  methods: {
   }
 }
 </script>
 <style scoped lang="css">
 
 .base-timer {
-  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
   width: 300px;
   height: 300px;
 }
@@ -116,6 +131,7 @@ export default {
 
     /* Allows the ring to change color when the color value updates */
     stroke: rgb(65, 184, 131);
+
   }
 
   .base-timer__svg {

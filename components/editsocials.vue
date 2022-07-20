@@ -6,7 +6,10 @@
           {{ socialTopic.id }}
         </div>
         <div class="meta">
-          {{ socialTopic.name }}
+          {{ socialTopic.title }}
+        </div>
+        <div class="meta">
+          {{ socialTopic.text }}
         </div>
         <div class="extra content">
           <span class="right floated edit icon">
