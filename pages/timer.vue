@@ -4,13 +4,13 @@
     <BaseTimer
       :time-left="timeLeft"
     />
-    <p style="font-size:50px; float: left;transform:rotate(90deg); margin: 25px;" @click="startTimer()">
+    <p style="font-size:50px; float: left;transform:rotate(90deg); margin: 25px;" @click="startTimer()" v-on:click="toggleDiv">
       &#128316;
     </p>
-    <p style="font-size:50px; float: left ;margin: 25px;">
+    <p v-if="toggle" style="font-size:50px; float: left ;margin: 25px;" @click="stopTimer()">
       &#9208;
     </p>
-    <p style="font-size:50px ; float: left;margin: 25px;">
+    <p style="font-size:50px ; float: left;margin: 25px;" @click="resetTimer()">
       &#9210;
     </p>
   </div>
@@ -26,16 +26,14 @@ export default {
     return {
       timeLimit: 20,
       timerInterval: null,
-      timePassed: 0
+      timePassed: 0,
+      toggle: false
     }
   },
   computed: {
     timeLeft () {
       return this.timeLimit - this.timePassed
     }
-  },
-  mounted () {
-    this.startTimer()
   },
   methods: {
     startTimer () {
@@ -45,6 +43,16 @@ export default {
           clearInterval(this.timerInterval)
         }
       }, 1000)
+    },
+    stopTimer () {
+      clearInterval(this.timerInterval)
+    },
+    resetTimer () {
+      console.log('hallo')
+      this.timePassed = 0
+    },
+    toggleDiv () {
+      this.toggle = !this.toggle
     }
   }
 }
